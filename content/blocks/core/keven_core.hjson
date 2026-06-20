@@ -1,0 +1,25 @@
+name: keven core
+  type: CoreBlock
+  health: 35000
+  size: 10
+  armor: 10
+  isFirstTier: false
+  itemCapacity: 60000
+  unitCapModifier: 60
+  buildCostMultiplier: 0.7
+  squareSprite: false
+    "thrusterLength": 30
+  unitType: keven
+  "requirements": [
+    {
+      "item": "coin",
+      "amount": 0
+    },
+    
+  ],
+  "category": "units"
+
+  alwaysUnlocked: true
+  drawCracks: true
+  createRubble: true
+  category: effect

@@ -1,0 +1,349 @@
+type:payload
+flying:true
+name:guardian of sky level 4
+description:A super Egyptian warrior, Zeta, fires lasers and is accompanied by two guards.
+"template": "ErekirUnitType",
+health:3600
+speed:3
+armor:4
+"hitSize":36
+"engineSize": 0, 
+rotateSpeed:6
+useEngineElevation:false
+faceTarget:true
+"payloadCapacity": 9000,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: -53
+moveX: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.15
+growY: -0.15
+
+}
+  ]
+
+
+abilities:[
+
+ {
+		type: SpawnDeathAbility
+		amount: 2
+		unit: guardian_of_sky
+	}
+
+ {
+  type:EnergyFieldAbility
+  damage:21
+  reload:37
+  x: 30
+  y: -20
+  range:130
+  effectRadius:0.1
+  damageEffect:chainLightning
+  status:electrified
+  statusDuration:160
+  shootSound:spark
+  maxTargets:6
+  healPercent:6
+ }
+ 
+  {
+  type:EnergyFieldAbility
+  damage:21
+  reload:37
+  x: -30
+  y: -20
+  range:130
+  effectRadius:0.1
+  damageEffect:chainLightning
+  status:electrified
+  statusDuration:160
+  shootSound:spark
+  maxTargets:6
+  healPercent:6
+ }
+
+]
+
+weapons: [
+    {
+        name: fire_ball
+        outlineColor: 1ED91E
+        rotate: true
+        mirror: false
+        shootY: 16
+        x: 30
+        y: -20
+        reload: 40
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: flame
+        
+        bullet: {
+      type: BasicBulletType
+      "collidesTeam":true,
+      "healPercent":9,
+        lightRadius: 10
+        lightColor: C6FF6BFF
+        damage: 45
+        scaleVelocity: true
+        splashDamage: 20
+        splashDamageRadius: 20
+        height: 7.5
+        width: 7.5
+        speed: 5
+        lifetime: 34
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 2
+        trailParam: 10
+        trailLength: 19
+        trailColor: C6FF6BFF
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 19
+          interp: circleOut
+          cone: 360
+          offset: 3
+          lightColor: FAE965
+          colorFrom: ffffff
+          colorTo: FAE965
+          sizeFrom: 2
+          sizeTo: 0
+        },
+        fragBullets: 5
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+        type: BasicBulletType
+        sprite: circle-bullet
+        damage: 50
+        height: 14
+        width: 12
+        speed: 4
+        lifetime: 30
+        homingPower: 0.2
+        homingDelay: 17
+        homingRange: 100
+        trailChance: 2
+        trailParam: 10
+        trailLength: 10
+        trailColor: FAE965
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 20
+          interp: circleOut
+          cone: 360
+          offset: 3
+          lightColor: FAE965
+          colorFrom: ffffff
+          colorTo: FAE965
+          sizeFrom: 2
+          sizeTo: 0
+        },
+        fragBullets: 1
+        "collidesTeam":true,
+       "healPercent":5,
+        fragVelocityMin: 0.8
+        fragLifeMin: 0.8
+        fragRandomSpread: 0
+        fragSpread: 0
+        fragBullet: {
+        type: LaserBulletType
+        length: 50,
+        width: 20
+        damage: 30
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          FAE965
+          FF00EE
+          FAE965
+        ],
+        sideAngle: -45
+        sideLength: 30
+        sideWidth: 3.4
+       }
+       }
+    }
+    }
+        
+        
+            {
+        name: fire_ball
+        outlineColor: 1ED91E
+        rotate: true
+        mirror: false
+        shootY: 16
+        x: -30
+        y: -20
+        reload: 40
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: flame
+        
+        bullet: {
+      type: BasicBulletType
+      "collidesTeam":true,
+      "healPercent":9,
+        lightRadius: 10
+        lightColor: C6FF6BFF
+        damage: 45
+        scaleVelocity: true
+        splashDamage: 20
+        splashDamageRadius: 20
+        height: 7.5
+        width: 7.5
+        speed: 5
+        lifetime: 34
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 2
+        trailParam: 10
+        trailLength: 19
+        trailColor: C6FF6BFF
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 19
+          interp: circleOut
+          cone: 360
+          offset: 3
+          lightColor: FAE965
+          colorFrom: ffffff
+          colorTo: FAE965
+          sizeFrom: 2
+          sizeTo: 0
+        },
+        fragBullets: 5
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+        type: BasicBulletType
+        sprite: circle-bullet
+        damage: 50
+        height: 14
+        width: 12
+        speed: 4
+        lifetime: 30
+        homingPower: 0.2
+        homingDelay: 17
+        homingRange: 100
+        trailChance: 2
+        trailParam: 10
+        trailLength: 10
+        trailColor: FAE965
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 20
+          interp: circleOut
+          cone: 360
+          offset: 3
+          lightColor: FAE965
+          colorFrom: ffffff
+          colorTo: FAE965
+          sizeFrom: 2
+          sizeTo: 0
+        },
+        fragBullets: 1
+        "collidesTeam":true,
+       "healPercent":5,
+        fragVelocityMin: 0.8
+        fragLifeMin: 0.8
+        fragRandomSpread: 0
+        fragSpread: 0
+        fragBullet: {
+        type: LaserBulletType
+        length: 50,
+        width: 20
+        damage: 30
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          FAE965
+          FF00EE
+          FAE965
+        ],
+        sideAngle: -45
+        sideLength: 30
+        sideWidth: 3.4
+       }
+       }
+    }
+    }
+        
+        
+        {
+                name: gama
+                mirror: false
+                "heatTime": 90,
+                "heatColor": "FFFFFF",
+                alternate: true
+                continuous: true
+           	"shootY": 22,
+                top: true
+                rotate: false
+		rotateSpeed: 5
+                x: 0
+                y: 0
+                reload: 350
+                shoot: {
+                    shots: 1
+                    shotDelay: 0
+            }
+            inaccuracy: 0
+            recoil: 0
+            shootSound: beam
+            shootEffect: none
+            bullet: {
+                type: ContinuousLaserBulletType
+                damage: 89
+                speed: 0
+               lifetime: 90
+                knockback: -1
+                backColor: 87CEEB
+                frontColor: 87CEEB
+                mixColorFrom: 87CEEB
+                mixColorTo: 87CEEB
+                width: 5
+                length: 230
+            }
+ }
+        
+        
+ ]
+     alwaysUnlocked: true

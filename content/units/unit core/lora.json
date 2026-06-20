@@ -1,0 +1,276 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+buildRange:340,
+buildSpeed:8.5,
+accel: 0.06
+drag: 0.06
+ "range": 250,
+  "maxRange": 300,
+description:Cheetah girl is a powerful superhero who launches nuclear strikes..
+outlineColor: 00000000
+"template": "ErekirUnitType",
+hitSize: 25
+canAttack:true,
+contorller:BuilderAI,
+coreUnitDock:true,
+defaultController: BuilderAI,
+flying:true,
+health:2300,
+  "engineSize": 0, 
+itemCapacity: 150,
+localisedName: "lora",
+mineFloor:true
+mineRange: 150
+"mineSpeed":17,
+mineTier: 11
+mineWalls:true
+speed: 10,
+"rotateSpeed": 8.5,
+"payloadCapacity": 1500,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -34
+moveX: -34
+progress: warmup
+
+
+children: [
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -21
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.2
+growY: -0.2
+}
+
+]
+}
+
+
+{
+"layerOffset": -0.0001, 
+type: RegionPart
+suffix: -lowest
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+moveY: 0.7
+growY: 0.14
+}
+
+{
+"layerOffset": 0.0001, 
+type: RegionPart
+suffix: -top
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+moveY: -0.7
+growY: 0.1
+}
+]
+
+
+abilities:[
+
+]
+
+weapons: [
+{
+    name: lightning
+    shooty: 8
+    reload: 40
+    alternate: false
+    recoil: 0
+    mirror: true
+    rotate: true
+    x: 20
+    y: -15
+    shootSound: bolt
+    bullet: {
+      type: BasicBulletType
+      speed: 5
+      trailColor: FF69B4
+      frontColor: FF69B4
+      backColor: FF69B4
+      lifetime: 40
+      damage: 70
+      width: 7
+      height: 8
+      trailWidth: 1
+      trailLength: 4
+      pierce: true
+      shrinkX: 0
+      shrinkY: 0
+      fragBullets: 10
+      fragSpread: 60
+      fragRandomSpread: 0
+      fragVelocityMin: 1
+      fragVelocityMax: 1
+      fragLifeMin: 1
+      fragLifeMax: 1
+      fragBullet: {
+      type: LightningBulletType
+          lightningColor: FF69B4
+          lightningLength: 10
+          lightningDamage: 34
+          hitSound: spark
+          despawnSound: spark
+          lifetime: 1
+    }
+}
+}
+
+
+   {
+   name: load_spirit_energy
+               shoot: {
+                     shots: 1
+      shotDelay: 0
+firstShotDelay: 0
+}
+    x: 0
+    y: -40
+    reload: 1900
+    shootWarmupSpeed: 0.006
+    minWarmup: 0.99
+    recoil: 0
+     "heatTime": 90,
+    "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 0
+    mirror: false
+    rotate: false
+    shootSound: iron_door
+    
+bullet: {    
+     type: SolidBulletType
+                damage: 1
+                homing: false
+                speed: 1
+                scaleLife: true          
+                lifetime: 1                
+         fragBullets: 1
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+      type: BasicBulletType
+        spawnUnit: spirit_energy
+       }
+       }
+       
+         "parts": [
+{
+type: RegionPart
+suffix: -load
+mirror: false
+    "layerOffset": -0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: recoil
+moveRot: -180
+       
+       }
+       
+       {
+type: RegionPart
+suffix: -energy1
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -7000
+color: ffffffff
+       
+       }
+       
+              {
+type: RegionPart
+suffix: -energy3
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -4000
+color: ffffffff
+       
+       }
+       
+                     {
+type: RegionPart
+suffix: -energy2
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -6000
+color: ffffffff
+       
+       }
+       
+   ]
+   }
+
+   ]
+   
+   "deathSound": "lora_die",
+
+    alwaysUnlocked: true
+}

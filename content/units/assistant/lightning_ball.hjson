@@ -1,0 +1,53 @@
+name: lightning ball
+description: An energy ball that fires an electric laser and hits all enemies.
+speed: 0
+flying: false
+outlineColor: 00000000
+"engineSize": 0, 
+"template": "ErekirUnitType",
+type: missile
+useUnitCap: false
+lifetime: 680
+health: 999999999
+armor: 20
+rotateSpeed:0
+hitSize: 8
+mechStepParticles: true
+stepShake: 1
+drownTimeMultiplier: 200
+mechFrontSway: 1
+mechSideSway: 1
+
+weapons: [
+    {
+        rotateSpeed: 12
+        rotate: true
+        mirror: false
+        shootY: 3
+        x: 0
+        y: 0
+        reload: 5
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: bolt
+                "inaccuracy": 80,
+            shoot: {
+      shots: 5
+      shotDelay: 0
+    }
+        
+bullet: {
+      type: LightningBulletType
+          lightningColor: 00ff00
+          lightningLength: 10
+          lightningDamage: 20
+          hitSound: spark
+          despawnSound: spark
+          lifetime: 1
+    }
+    }
+ ]
+
+
+
+    alwaysUnlocked: true

@@ -1,0 +1,11 @@
+{
+  "type": "item",
+  "name": "emerald",
+  "localizedName": "emerald",
+  "description": "emerald. It's a very rare item, so pay attention to it. You'll find two emerald inside an enemy and one emerald inside an enemy block.",
+  "transitionFrames": 0
+    "frames": 14,
+  "frameTime": 4,
+  "color": 1ed91e
+      alwaysUnlocked: true
+}

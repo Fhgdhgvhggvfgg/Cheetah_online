@@ -1,0 +1,85 @@
+name: Leena
+description: "Cheetah is a girl who uses an advanced laser rifle to hit enemies from a distance. It heals nearby buildings.
+"
+type: PowerTurret
+rotateSpeed: 8
+reload: 80
+targetGround: true
+targetAir: true
+range: 430
+recoil: 0
+shootSound: bolt
+size: 5
+health: 6100
+targetHealing: true
+
+drawer: {
+  type: DrawTurret
+    "parts": [
+{
+type: RegionPart
+suffix: -preview
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: -40
+moveX: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.2
+growY: -0.2
+}
+  ]
+  }
+  
+ 
+xRand: 1
+shootY: 30
+            shoot: {
+firstShotDelay: 50
+}
+consumes: {
+power: 2
+coolant: {
+  type: ConsumeCoolant
+  allowGas: false
+  allowLiquid: true
+  amount: 0.2
+}
+}
+
+
+shootType: {
+  type: BasicBulletType
+  damage: 300
+  speed: 16
+  height: 7
+  width: 2
+  lifetime: 27
+  
+  collidesTeam: true
+  healPercent: 12
+  
+  fragOnHit: true
+  fragBullets: 50
+  splashDamageRadius: 50
+  splashDamage: 270
+  hitEffect: blastExplosion
+  
+  trailLength: 4
+  trailColor: "00ffff"
+}
+alwaysUnlocked: true
+requirements: [
+  coin/800
+]
+
+category: turret
+
+

@@ -1,0 +1,89 @@
+{
+alwaysUnlocked: true
+"template": "ErekirUnitType",
+canAttack:false,
+lifetime: 3600,
+coreUnitDock:true,
+  "drownTimeMultiplier": 99999999999999999999,
+flying:false,
+health:60000,
+hitSize: 32
+localisedName: "firefighter box",
+speed: 0,
+rotateSpeed: 0
+"type":"missile",
+"engineSize": 0, 
+
+
+
+
+abilities:[
+ {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: firefighter_injured
+	}
+	]
+
+weapons: [
+
+
+    {
+    name: box
+                mirror: false
+                top: true
+                rotate: false
+                x: 0
+                y: 0
+                reload: 4000
+                shootSound: iron_door
+                shootY: 0
+                alwaysShooting: true
+
+shoot: {
+firstShotDelay: 1000
+}
+
+                
+            bullet: {
+     type: SolidBulletType
+                damage: 1
+                homing: false
+                speed: 1
+                scaleLife: true          
+                lifetime: 1                
+       }
+                
+                         "parts": [
+       
+
+       
+                     {
+type: RegionPart
+suffix: -door_f
+mirror: true
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: -6
+y: 0
+progress: recoil
+moveRot: 0
+moveX: -10
+color: ffffffff
+       
+       }
+       
+   ]
+                
+}
+
+
+
+
+
+        
+ ]
+
+
+}

@@ -1,0 +1,25 @@
+{
+  "name": "drill 01",
+  "description": "Advanced drilling rig that can drill to any depth.",
+"health": 1000,  
+"type": "Drill",
+  "size": 2,
+  "tier": 20,
+    "scaling": 2.0,
+  "itemCapacity": 80,
+  "drillTime": 100,
+  "hasPower": false,
+  "powerConsumes": 2,
+  "drawMineItem": false,
+  "consumes": {
+    "liquid": {
+      "liquid": "water",
+      "amount": 0.02,
+      "optional": true,
+      "booster": true
+    }
+  },
+  "requirements": [{"item":"coin","amount":60}],
+  "category": "production",
+      alwaysUnlocked: true
+}

@@ -1,0 +1,12 @@
+{
+  "type": "ItemBridge",
+  "name": "cpe bricon"
+  "description": " range than cpe bridge conveyor",
+  "health": 600,
+  "requirements": [{"item": "coin","amount": 8}],
+  "range": 7,
+  "transportTime": 0.5,
+  "hasPower": false,
+  "category": "distribution",
+  alwaysUnlocked: true
+}

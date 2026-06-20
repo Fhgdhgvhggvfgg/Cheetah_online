@@ -1,0 +1,278 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+accel: 0.06
+drag: 0.06
+ "range": 250,
+  "maxRange": 300,
+description:"Cheetah girl rides a flying bicycle, conjures floating cannons, and launches nuclear strikes.",
+"outlineColor": "00000000",
+"template": "ErekirUnitType",
+hitSize: 25
+canAttack:true,
+contorller:BuilderAI,
+coreUnitDock:true,
+flying:true,
+health:12000,
+  "engineSize": 0, 
+itemCapacity: 120,
+localisedName: "leena biker",
+mineFloor:true
+mineRange: 170
+"mineSpeed":20,
+mineTier: 11
+mineWalls:true
+speed: 9,
+"rotateSpeed": 8.5,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -25
+moveX: -25
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.5
+growY: -0.5
+
+}
+
+  ]
+
+
+abilities:[
+
+ {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: leena_injured
+	}
+
+ {
+  type:ShieldArcAbility
+  y:0
+  radius:50
+  max:2300
+  regen:0.6
+  cooldown:320
+  width:3
+  angle:120
+  color:84f491
+  whenShooting:false
+ }
+ {
+  type:ShieldArcAbility
+  y:0
+  angleOffset:120
+  radius:50
+  max:2300
+  regen:0.6
+  cooldown:320
+  width:3
+  angle:120
+  color:84f491
+  whenShooting:false
+ }
+ {
+  type:ShieldArcAbility
+  y:0
+  angleOffset:240
+  radius:50
+  max:2300
+  regen:0.6
+  cooldown:320
+  width:3
+  angle:120
+  color:84f491
+  whenShooting:false
+ }
+
+]
+
+weapons: [
+    {
+                name: lights
+                mirror: false
+                top: true
+                rotate: false
+		shootY: 12
+                x: 0
+                y: 0
+                reload: 90
+                shootSound: bang
+                recoil: 0
+                
+            bullet: {
+              type: SolidBulletType
+                damage: 100
+                homing: false
+                speed: 100
+                scaleLife: true
+                sprite: large-bomb
+                lifetime: 4
+                knockback: -1
+                backColor: 8DEEEB
+                frontColor: 8DEEEB
+                mixColorFrom: 8DEEEB
+                mixColorTo: 8DEEEB
+                width: 0
+                height: 0
+         fragBullets: 1
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+      type: BasicBulletType
+        spawnUnit: air_force
+       }
+       }
+                
+}
+   
+   {
+   name: mega_lazer
+
+    x: 0
+    y: 0
+    reload: 80
+    shootWarmupSpeed: 0.01
+    minWarmup: 0.99
+    recoil: 0
+     "heatTime": 90,
+    "heatColor": "FFFFFF",
+    alternate: true
+          "collidesTeam":true,
+      "healPercent":1,
+    shootY: 0
+    mirror: false
+    rotate: false
+    shootSound: shovelS
+bullet: {
+      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FFFFFFF
+        damage: 200
+        scaleVelocity: true
+        splashDamage: 80
+        splashDamageRadius: 40
+        height: 6
+        width: 6
+          collidesTeam: true
+  healPercent: 12
+        speed: 40
+        lifetime: 10
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 1
+        trailParam: 10
+        trailLength: 19
+        trailColor: 87CEFA
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 25
+          interp: circleOut
+          cone: 360
+          offset": 3
+          lightColor: FFFFFFF
+          colorFrom: FFFFFFF
+          colorTo: 87CEFA
+          sizeFrom: 3
+          sizeTo: 0
+        },
+        despawnEffect: [
+        {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 20
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: ADD8E6
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: FFFFFF
+          colorTo: 87CEFA
+          },
+          {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 14
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: ADD8E6
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: FFFFFFF
+          colorTo: ADD8E6
+           },
+        ]
+
+               		splashDamageRadius: 70
+		splashDamage: 450
+		hitEffect: blastExplosion
+		      "collidesTeam":true,
+      "healPercent":6,
+        trailLength: 4
+        trailColor: ff0000
+       }
+       
+         "parts": [
+       
+       {
+type: RegionPart
+suffix: -mega1
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffff
+       }
+       
+              {
+type: RegionPart
+suffix: -mega2
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -2000
+color: ffffff00
+colorTo: ffffffff
+       }
+       
+       
+   ]
+   }
+
+
+   ]
+   
+"deathSound": "lora_die",
+
+    alwaysUnlocked: true
+}

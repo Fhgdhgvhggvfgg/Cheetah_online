@@ -1,0 +1,283 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+buildRange:300,
+buildSpeed:8.5,
+accel: 0.06
+drag: 0.06
+ "range": 250,
+  "maxRange": 300,
+description:A cheetah demon man hurls powerful blue fireballs
+outlineColor: 00000000
+"template": "ErekirUnitType",
+hitSize: 28
+canAttack:true,
+contorller:BuilderAI,
+coreUnitDock:true,
+defaultController: BuilderAI,
+flying:true,
+health:3900,
+  "engineSize": 0, 
+itemCapacity: 130,
+localisedName: "jeff",
+mineFloor:true
+mineRange: 160
+"mineSpeed":19,
+mineTier: 11
+mineWalls:true
+speed: 8,
+"rotateSpeed": 8.5,
+"payloadCapacity": 1500,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -32
+moveX: -32
+progress: warmup
+
+
+children: [
+
+
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -21
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.2
+growY: -0.2
+}
+
+]
+}
+  ]
+
+
+abilities:[
+
+]
+
+weapons: [
+   {
+   name: demon
+    x: 0
+    y: 0
+    reload: 54
+    recoil: 0
+     "heatTime": 90,
+  "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 16
+    mirror: false
+    rotate: false
+    shootSound: flame
+bullet: {
+      type: BasicBulletType
+      status: burning
+statusDuration: 540
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FFFFFFF
+        damage: 130
+        scaleVelocity: true
+        splashDamage: 40
+        splashDamageRadius: 40
+        height: 6
+        width: 6
+        speed: 7
+        lifetime: 30
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 1
+        trailParam: 10
+        trailLength: 19
+        trailColor: ADD8E6
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 25
+          interp: circleOut
+          cone: 360
+          offset": 3
+          lightColor: FFFFFFF
+          colorFrom: FFFFFFF
+          colorTo: ADD8E6
+          sizeFrom: 3
+          sizeTo: 0
+        },
+        despawnEffect: [
+        {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 20
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: ADD8E6
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: ADD8E6
+          colorTo: FFFFFFF
+          },
+          {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 14
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: ADD8E6
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: FFFFFFF
+          colorTo: ADD8E6
+           },
+        ]
+       }
+}
+
+
+   {
+   name: load_spirit_energy
+               shoot: {
+                     shots: 1
+      shotDelay: 0
+firstShotDelay: 0
+}
+    x: 0
+    y: -40
+    reload: 1900
+    shootWarmupSpeed: 0.006
+    minWarmup: 0.99
+    recoil: 0
+     "heatTime": 90,
+    "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 0
+    mirror: false
+    rotate: false
+    shootSound: iron_door
+    
+    bullet: {    
+     type: SolidBulletType
+                damage: 1
+                homing: false
+                speed: 1
+                scaleLife: true          
+                lifetime: 1                
+         fragBullets: 1
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+      type: BasicBulletType
+        spawnUnit: spirit_energy
+       }
+       }
+       
+         "parts": [
+{
+type: RegionPart
+suffix: -load
+mirror: false
+    "layerOffset": -0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: recoil
+moveRot: -180
+       
+       }
+       
+       {
+type: RegionPart
+suffix: -energy1
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -7000
+color: ffffffff
+       
+       }
+       
+              {
+type: RegionPart
+suffix: -energy3
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -4000
+color: ffffffff
+       
+       }
+       
+                     {
+type: RegionPart
+suffix: -energy2
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -6000
+color: ffffffff
+       
+       }
+       
+   ]
+   }
+
+
+   ]
+   
+   "deathSound": "jeff_die",
+
+
+    alwaysUnlocked: true
+}

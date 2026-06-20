@@ -1,0 +1,19 @@
+{
+  "type": "LogicDisplay",
+  "name": "large-logic-display",
+  "description": "A larger display for showing information from processors. Use [stat]drawflush[] to display things.",
+  "size": 10,
+  "alwaysUnlocked": true
+  "health": 400,
+  "displaySize": 320,
+  "maxInstructions": 300,
+  "requirements": [
+    {
+      "item": "coin",
+      "amount": 20
+    },
+  ],
+  "category": "logic",
+
+  "env": 1
+}

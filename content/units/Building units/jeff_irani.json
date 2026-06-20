@@ -1,0 +1,236 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+buildRange:300,
+buildSpeed:8.5,
+accel: 0.06
+drag: 0.06
+description:An Iranian cheetah warrior unleashes lightning-laden fire and heals allies.
+outlineColor: 00000000
+"template": "ErekirUnitType",
+hitSize: 28
+canAttack:true,
+contorller:BuilderAI,
+coreUnitDock:true,
+flying:true,
+health:9000,
+  "engineSize": 0, 
+itemCapacity: 130,
+localisedName: "jeff",
+mineFloor:true
+mineRange: 160
+"mineSpeed":19,
+mineTier: 11
+mineWalls:true
+speed: 8,
+"rotateSpeed": 8.5,
+"payloadCapacity": 1500,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -42
+moveX: 0
+progress: warmup
+
+
+children: [
+
+
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -21
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.3
+growY: -0.3
+}
+
+]
+}
+  ]
+
+
+abilities:[
+
+ {
+  type:EnergyFieldAbility
+  damage:21
+  reload:37
+  x: 30
+  y: -20
+  range:210
+  effectRadius:0.1
+  damageEffect:chainLightning
+  status:electrified
+  statusDuration:160
+  shootSound:spark
+  maxTargets:6
+  healPercent:6
+ }
+ 
+  {
+  type:EnergyFieldAbility
+  damage:21
+  reload:37
+  x: -30
+  y: -20
+  range:210
+  effectRadius:0.1
+  damageEffect:chainLightning
+  status:electrified
+  statusDuration:160
+  shootSound:spark
+  maxTargets:6
+  healPercent:6
+ }
+
+]
+
+weapons: [
+   {
+   name: demon
+    x: 7
+    y: 0
+    reload: 20
+    recoil: 0
+     "heatTime": 90,
+  "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 16
+    mirror: true
+    rotate: false
+    shootSound: flame
+bullet: {
+      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FFFFFFF
+        damage: 200
+        scaleVelocity: true
+        splashDamage: 80
+        splashDamageRadius: 40
+        height: 6
+        width: 6
+          collidesTeam: true
+  healPercent: 12
+        speed: 9
+        lifetime: 36
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 1
+        trailParam: 10
+        trailLength: 19
+        trailColor: 87CEFA
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 25
+          interp: circleOut
+          cone: 360
+          offset": 3
+          lightColor: FFFFFFF
+          colorFrom: FFFFFFF
+          colorTo: 87CEFA
+          sizeFrom: 3
+          sizeTo: 0
+        },
+        despawnEffect: [
+        {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 20
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: ADD8E6
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: FFFFFF
+          colorTo: 87CEFA
+          },
+          {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 14
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: ADD8E6
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: FFFFFFF
+          colorTo: ADD8E6
+           },
+        ]
+                  fragBullets: 13
+        fragVelocityMin: 0.2
+        fragRandomSpread: 350
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+      type: LaserBulletType
+        length: 86
+          collidesTeam: true
+  healPercent: 12
+        width: 5
+        damage: 60
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          87CEFA
+          87CEFA
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+       }
+               		splashDamageRadius: 70
+		splashDamage: 140
+		hitEffect: blastExplosion
+        trailLength: 4
+        trailColor: ff0000
+       }
+}
+
+   ]
+   
+   "deathSound": "jeff_die",
+
+
+    alwaysUnlocked: true
+}

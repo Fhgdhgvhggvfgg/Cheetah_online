@@ -1,0 +1,159 @@
+{
+alwaysUnlocked: true
+"template": "ErekirUnitType",
+canAttack:false,
+lifetime: 800,
+coreUnitDock:true,
+  "drownTimeMultiplier": 99999999999999999999,
+flying:false,
+health:999999999999999999,
+hitSize: 32
+localisedName: "skirt",
+speed: 0,
+rotateSpeed: 0
+"type":"missile",
+"engineSize": 0, 
+
+abilities:[
+ {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: jeen_fire_injured
+	}
+	]
+
+weapons: [
+
+    {
+                mirror: true
+                top: true
+                rotate: true
+		rotateSpeed: 10
+		shootY: 0
+                x: 15
+                y: 15
+                reload: 0.5
+                shootSound: water
+                
+                  	"inaccuracy" : 65, 
+                    
+    bullet: {
+ 		"type": "BasicBulletType",
+		"collidesAir": true,
+		"speed": 5,
+		"damage": 300,
+		"width": 0.1,
+		"height": 0.1,
+		
+		shootEffect: {
+			"type": "ParticleEffect",
+			"particles": 30,
+			"sizeFrom": 8,
+			"sizeTo": 0,
+			"length": 100,
+			"lifetime": 70,
+			"interp": "circleOut",
+			"lightColor": "FF5845FF",
+			"colorFrom": "FFDCD8FF",
+			"colorTo": "FF5845FF",
+			"cone": 10
+		}
+		
+		"smokeEffect": "none",
+		"lifetime": 13,
+		"despawnEffect": "none",
+		"hittable": false,
+		"reflectable": false,
+		
+		hitEffect: {
+			"type": "ParticleEffect",
+			"line": true,
+			"particles": 5,
+			"lifetime": 60,
+			"interp": "circleOut",
+			"length": 50,
+			"cone": -30,
+			"lenFrom": 5,
+			"lenTo": 0,
+			"colorFrom": "FF5845FF",
+			"colorTo": "FF5845FF"
+		}
+		
+		"pierce": true,
+		"incendAmount": 0
+}
+                
+}
+ 
+
+       {
+                mirror: true
+                top: true
+                rotate: true
+		rotateSpeed: 10
+		shootY: 0
+                x: 15
+                y: -15
+                reload: 0.5
+                shootSound: flame
+                
+                  	"inaccuracy" : 65, 
+                    
+    bullet: {
+ 		"type": "BasicBulletType",
+		"collidesAir": true,
+		"speed": 5,
+		"damage": 300,
+		"width": 0.1,
+		"height": 0.1,
+		
+		shootEffect: {
+			"type": "ParticleEffect",
+			"particles": 30,
+			"sizeFrom": 8,
+			"sizeTo": 0,
+			"length": 100,
+			"lifetime": 70,
+			"interp": "circleOut",
+			"lightColor": "FF5845FF",
+			"colorFrom": "FFDCD8FF",
+			"colorTo": "FF5845FF",
+			"cone": 10
+		}
+		
+		"smokeEffect": "none",
+		"lifetime": 13,
+		"despawnEffect": "none",
+		"hittable": false,
+		"reflectable": false,
+		
+		hitEffect: {
+			"type": "ParticleEffect",
+			"line": true,
+			"particles": 5,
+			"lifetime": 60,
+			"interp": "circleOut",
+			"length": 50,
+			"cone": -30,
+			"lenFrom": 5,
+			"lenTo": 0,
+			"colorFrom": "FF5845FF",
+			"colorTo": "FF5845FF"
+		}
+		
+		"pierce": true,
+		"incendAmount": 0
+}
+                
+}
+ 
+
+   
+   
+
+
+        
+ ]
+
+
+}

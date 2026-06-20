@@ -1,0 +1,27 @@
+{
+  "type": "GenericCrafter",
+  "name": "water plant",
+  "localizedName": "Drink Mixer",
+  "description": "Water plant converts energy into water",
+  "size": 1, 
+  
+  "requirements": [
+    { "item": "coin", "amount": 18}
+  ],
+  
+  "consumes": {
+    "power": 1, 
+    },
+ 
+  
+  "outputLiquid": {
+    "liquid": "water",
+    "amount": 0.3
+  },
+  "craftTime": 60, 
+  "craftEffect": "steam",
+  
+  "health": 700,
+  "category": "production", 
+   alwaysUnlocked: true
+}

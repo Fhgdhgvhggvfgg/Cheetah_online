@@ -1,0 +1,100 @@
+description: ""
+name: zack
+type: PowerTurret
+"outlineColor": "00000000"
+rotateSpeed: 8
+reload: 600
+targetGround: true
+targetAir: true
+range: 600
+recoil: 0
+shootSound: large_laser
+size: 5
+health: 5800
+
+drawer: {
+  type: DrawTurret
+    "parts": [
+{
+type: RegionPart
+suffix: -preview
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: -40
+moveX: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.2
+growY: -0.2
+}
+
+{
+type: RegionPart
+suffix: -bolt
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+}
+  ]
+  }
+  
+ 
+xRand: 1
+shootY: 18
+            shoot: {
+firstShotDelay: 50
+}
+consumes: {
+power: 2
+coolant: {
+  type: ConsumeCoolant
+  allowGas: false
+  allowLiquid: true
+  amount: 0.2
+}
+}
+
+shootType: {
+
+      type: LaserBulletType
+        length: 600
+        width: 6
+        damage: 500
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          8DEEEB
+          8DEEEB
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 30
+        sideWidth: 3.4
+    
+}
+
+requirements: [
+coin/450
+]
+category: turret
+parent: lancer
+    alwaysUnlocked: true

@@ -1,0 +1,58 @@
+{
+  type: "Reconstructor"
+  size: 4
+  constructTime: 3000
+  name: development
+  consumes: {
+    power: 2
+     items: [
+     {"item":"coin","amount":320},
+      ]
+  }
+  requirements: [
+     {"item":"coin","amount":300},
+    ]
+  upgrades: [
+    
+
+    
+    [
+    bulldozer_girl
+    bulldozer_girl_2
+    ]
+    
+    [
+    guardian_of_sky
+    guardian_of_sky_2
+    ]
+    
+    [
+    driver_jon
+    driver_jon_2
+    ]
+    
+        [
+    bulldozer_girl_3
+    bulldozer_girl_4
+    ]
+    
+        [
+    guardian_of_sky_3
+    guardian_of_sky_4
+    ]
+    
+    [
+    driver_jon_3
+    driver_jon_4
+    ]
+    
+    
+        [
+    jeen_fire_injured
+    jeen_fire
+    ]
+    
+  ]
+  category: units
+      alwaysUnlocked: true
+}

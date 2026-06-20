@@ -1,0 +1,24 @@
+name: jeff core
+  type: CoreBlock
+  health: 30000
+  size: 10
+  armor: 10
+  isFirstTier: false
+  itemCapacity: 60000
+  unitCapModifier: 60
+  buildCostMultiplier: 0.7
+  squareSprite: false
+  unitType: jeff
+  "requirements": [
+    {
+      "item": "coin",
+      "amount": 0
+    },
+    
+  ],
+  "category": "units"
+
+  alwaysUnlocked: true
+  drawCracks: true
+  createRubble: true
+  category: effect

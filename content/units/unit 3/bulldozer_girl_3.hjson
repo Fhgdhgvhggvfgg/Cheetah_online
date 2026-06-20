@@ -1,0 +1,116 @@
+name: bulldozer girl level 3
+"template": "ErekirUnitType",
+description: Cheetah girl rides a huge bulldozer with immense power that can crush anything with its strong support. and the vehicle deploys a drone that sprays water on the fires.
+type: mech 
+ "range": 50,
+  "maxRange": 50,
+mechLegColor: 00000000
+health: 9000
+armor: 1
+hitSize: 47
+speed: 3
+rotateSpeed: 3.6
+accel: 0.15
+stepShake: 0
+mechFrontSway: 0
+mechSideSway: 0
+itemCapacity: 12
+hitShake: 0
+outlineColor: 00000000
+buildRange:120,
+buildSpeed:1.4,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -48
+moveX: -48
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.1
+growY: -0.1
+
+}
+  ]
+
+
+abilities:[
+]
+
+weapons: [
+    {
+    "layerOffset": -0.0001, 
+        name: stent
+        rotate: false
+        mirror: false
+        shootY: 3
+        x: 0
+        y: 32
+        reload: 30
+        recoil: -5
+        ejectEffect: casing2
+        shootSound: shovelS
+            shoot: {
+firstShotDelay: 0
+}
+        
+    bullet: {
+      type: LaserBulletType
+        length: 31
+        width: 1
+        damage: 96
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+        		splashDamageRadius: 68
+		splashDamage: 560
+		hitEffect: blastExplosion
+        trailLength: 4
+        trailColor: ff0000
+    }
+    
+      "parts": [
+{
+type: RegionPart
+suffix: -hydraulic
+mirror: false
+under: false
+outline: false
+x: 0
+y: -10
+moveY: -4
+progress: hit
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff
+colorTo: ffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+}
+  ]
+    
+    
+    }
+ ]
+
+    alwaysUnlocked: true

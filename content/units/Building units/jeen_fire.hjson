@@ -1,0 +1,250 @@
+type:payload
+flying:true
+name:jeen fire
+description:A female Cheetah warrior fighting with a powerful flame-sword, she charges forcefully towards enemies to destroy them.
+"template": "ErekirUnitType",
+health:29000
+speed:3
+canAttack:true,
+coreUnitDock:true,
+contorller:BuilderAI,
+  "range": 100,
+  "maxRange": 100,
+accel: 0.08
+drag: 0.08
+buildRange:340,
+buildSpeed:8.5,
+armor:4
+outlineColor: ffffff00
+"hitSize":30
+"engineSize": 0, 
+rotateSpeed:10
+useEngineElevation:false
+faceTarget:true
+"payloadCapacity": 4800,
+
+
+  "parts": [
+  
+  
+{
+type: RegionPart
+suffix: -fireS
+mirror: false
+under: false
+outline: false
+"layerOffset": 0.001, 
+x: -4
+y: 17
+moveRot: 0
+progress: recoil
+color: ffffff00
+colorTo: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+}
+
+
+
+  
+  
+  {
+"layerOffset": 0.0001, 
+type: RegionPart
+suffix: -top
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+moveY: -0.7
+growY: 0
+
+}
+  
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: -36
+moveX: -36
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.20
+growY: -0.20
+
+}
+
+{
+type: RegionPart
+suffix: -
+mirror: false
+under: false
+outline: false
+"layerOffset": 0.001,  
+x: -4
+y: 0
+moveRot: -50
+progress: warmup
+color: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+
+children: [
+{
+type: RegionPart
+suffix: -arm
+mirror: false
+under: false
+outline: false
+"layerOffset": 0.1, 
+x: 0
+y: 0
+moveRot: 120
+progress: recoil
+color: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+children: [
+{
+type: RegionPart
+suffix: -sword
+mirror: false
+under: false
+outline: false
+"layerOffset": 0.01, 
+x: 0
+y: 10
+moveRot: 80
+progress: recoil
+color: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+}
+
+
+]
+
+}
+
+
+]
+
+
+
+}
+
+  ]
+
+
+abilities:[
+
+ {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: fire_die
+	}
+
+]
+
+weapons: [
+{
+	"name": "flamer",
+	"baseRotation": 0.0, 
+    "rotationLimit": 70.0,
+	"x": 0,
+	"y": 0,
+	"reload": 29,
+	    shootWarmupSpeed: 0.1
+    minWarmup: 0.99
+	"top": true,
+	"rotate": true
+    "rotateSpeed": 8,
+	"mirror": false,
+	"alternate": true,
+	"shootY": 23,
+	shoot: {
+		type: ShootPattern
+		shots: 9
+		firstShotDelay: 10
+		shotDelay: 0
+	}
+	
+	"recoil": 1.5,
+	"rotate": false,
+	"inaccuracy" : 55, 
+	"shootSound": "shaft",
+	"shootCone": 40,
+	
+	bullet: {
+	
+	recoil: -1
+		"type": "BasicBulletType",
+		"collidesAir": true,
+		"speed": 10,
+		"damage": 400,
+		"width": 0.1,
+		"height": 0.1,
+		
+		shootEffect: {
+			"type": "ParticleEffect",
+			"particles": 30,
+			"sizeFrom": 8,
+			"sizeTo": 0,
+			"length": 50,
+			"lifetime": 9,
+			"interp": "circleOut",
+			"lightColor": "FF5845FF",
+			"colorFrom": "FFDCD8FF",
+			"colorTo": "FF5845FF",
+			"cone": 10
+		}
+		
+		"smokeEffect": "none",
+		"lifetime": 10,
+		"despawnEffect": "none",
+		"hittable": false,
+		"reflectable": false,
+		
+		hitEffect: {
+			"type": "ParticleEffect",
+			"line": true,
+			"particles": 5,
+			"lifetime": 6,
+			"interp": "circleOut",
+			"length": 50,
+			"cone": -30,
+			"lenFrom": 5,
+			"lenTo": 0,
+			"colorFrom": "FF5845FF",
+			"colorTo": "FF5845FF"
+		}
+		
+		"pierce": true,
+		"incendAmount": 0
+	}
+}
+
+        
+ ]
+    "deathSound": "jeen_die",
+     alwaysUnlocked: true

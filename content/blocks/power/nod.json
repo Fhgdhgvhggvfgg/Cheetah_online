@@ -1,0 +1,13 @@
+category:power
+description:"power node made with gold" 
+health:340
+laserColor1: 6ed1e7
+laserColor2: 2b67a9
+laserRange:16
+localizedName:"gold node" 
+maxNodes:28
+requirements:[{"item":"coin","amount":2}]
+research:surge alloy nod
+type:PowerNode
+ 
+       alwaysUnlocked: true

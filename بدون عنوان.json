@@ -1,0 +1,37 @@
+Events.on(ClientLoadEvent, function() {
+    var iconTable = new Table();
+    iconTable.top().left();
+    iconTable.setFillParent(true);
+    iconTable.touchable = Touchable.disabled;
+
+    iconTable.update(function() {
+        iconTable.clearChildren();
+        
+        if (Vars.ui != null && Vars.player != null && Vars.player.unit() != null) {
+            var playerUnit = Vars.player.unit();
+            var displayIcon = (playerUnit instanceof BlockUnitc) ? playerUnit.tile().block.uiIcon : (playerUnit.type != null ? playerUnit.type.uiIcon : null);
+
+            // 1. أيقونة الوحدة (تعديلك الحالي)
+            if (displayIcon != null) {
+                iconTable.image(displayIcon)
+                    .size(186)
+                    .padLeft(340)
+                    .padTop(26);
+            }
+
+            // 2. شعار اللعبة الرسمي (Mindustry Logo)
+            // قمت بوضعه في "سطر جديد" أو بجانبه، يمكنك التحكم بموقعه عبر الـ pad
+            iconTable.image(Tex.logo)
+                .size(320, 60) // الشعار مستطيل لذا نستخدم (العرض، الطول)
+                .padLeft(-710)   // عدل هذا الرقم لتحريكه أفقياً
+                .padTop(160);   // عدل هذا الرقم لتحريكه عمودياً
+        }
+    });
+
+    Core.scene.add(iconTable);
+});
+
+
+....................
+//اضافة الكود الى ملف main في مود mindustry لتعديل الواجهة
+...................

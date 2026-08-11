@@ -322,7 +322,7 @@ Events.on(ClientLoadEvent, e => {
                 else if (event.tile.block() instanceof CoreBlock) {
                     core.items.add(Vars.content.item("cheetah-01-coin"), 450);
                     core.items.add(Vars.content.item("cheetah-01-emerald"), 60);
-                    Vars.ui.showInfoFade("you won 80 emeralds");
+                    Vars.ui.showInfoFade("you won 60 emeralds");
                     emerald.play(1.0);
                 }
             }

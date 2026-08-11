@@ -296,7 +296,6 @@ const emerald = Vars.tree.loadSound("emerald");
 // ننتظر حتى تكتمل تحميلات العميل (اللاعب) قبل تسجيل الحدث
 Events.on(ClientLoadEvent, e => {
 
-    // 1. حدث تدمير الوحدات
 
 
     // 2. حدث تدمير المباني
@@ -307,28 +306,22 @@ Events.on(ClientLoadEvent, e => {
                 // تدمير الأبراج
                 if (event.tile.block() instanceof Turret) {
                     core.items.add(Vars.content.item("cheetah-01-coin"), 3);
-                    core.items.add(Vars.content.item("cheetah-01-emerald"), 1);
-                    Vars.ui.showInfoFade("you won 1 emeralds");
-                    emerald.play(1.0);
                 }
                 // تدمير المصانع
                 else if (event.tile.block() instanceof GenericCrafter) {
                     core.items.add(Vars.content.item("cheetah-01-coin"), 1);
-                    core.items.add(Vars.content.item("cheetah-01-emerald"), 1);
-                    Vars.ui.showInfoFade("you won 1 emeralds");
-                    emerald.play(1.0);
                 }
                 // تدمير مصانع الوحدات
                 else if (event.tile.block() instanceof UnitFactory) {
-                    core.items.add(Vars.content.item("cheetah-01-coin"), 14);
+                    core.items.add(Vars.content.item("cheetah-01-coin"), 10);
                     core.items.add(Vars.content.item("cheetah-01-emerald"), 2);
                     Vars.ui.showInfoFade("you won 2 emeralds");
                     emerald.play(1.0);
                 }
                 // تدمير النواة (الـ Core)
                 else if (event.tile.block() instanceof CoreBlock) {
-                    core.items.add(Vars.content.item("cheetah-01-coin"), 330);
-                    core.items.add(Vars.content.item("cheetah-01-emerald"), 80);
+                    core.items.add(Vars.content.item("cheetah-01-coin"), 450);
+                    core.items.add(Vars.content.item("cheetah-01-emerald"), 60);
                     Vars.ui.showInfoFade("you won 80 emeralds");
                     emerald.play(1.0);
                 }
@@ -336,8 +329,6 @@ Events.on(ClientLoadEvent, e => {
         }
     });
 });
-
-
 
 //==============================================
 // تحميل واجهة اللعب (game play)

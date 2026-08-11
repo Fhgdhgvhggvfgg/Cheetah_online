@@ -12,8 +12,8 @@
 {
 "unit":"spirit_energy",
 "requirements":[
-"coin/45"
-"emerald/2"
+"coin/55"
+"emerald/8"
 ],
 "time":200
 }

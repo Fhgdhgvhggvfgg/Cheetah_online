@@ -297,19 +297,7 @@ const emerald = Vars.tree.loadSound("emerald");
 Events.on(ClientLoadEvent, e => {
 
     // 1. حدث تدمير الوحدات
-    Events.on(UnitDestroyEvent, event => {
-        let core = Vars.player.team().core();
-        if (event.unit.team != Vars.player.team()) {
-            if (core != null) {
-                if (!event.unit.type.flying) {
-                    core.items.add(Vars.content.item("cheetah-01-coin"), 5);
-                    core.items.add(Vars.content.item("cheetah-01-emerald"), 2);
-                    Vars.ui.showInfoFade("you won 2 emeralds");
-                    emerald.play(1.0);
-                }
-            }
-        }
-    });
+
 
     // 2. حدث تدمير المباني
     Events.on(BlockDestroyEvent, event => {
@@ -433,7 +421,7 @@ Timer.schedule(() => {
             if(Vars.state.isGame()){
             let playerCore = Vars.player.team().core();
             if(playerCore != null){
-                playerCore.items.add(Vars.content.item("cheetah-01-coin"), 3);
+                playerCore.items.add(Vars.content.item("cheetah-01-coin"), 12);
             }
            } 
             

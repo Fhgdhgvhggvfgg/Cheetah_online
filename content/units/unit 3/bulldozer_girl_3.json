@@ -96,7 +96,6 @@ outline: false
 x: 0
 y: -10
 moveY: -4
-progress: hit
 moveX: 0
 moveRot: 0
 progress: warmup

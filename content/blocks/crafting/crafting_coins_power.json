@@ -17,5 +17,5 @@
 "size":3
 "type": "GenericCrafter",
 
-  "alwaysUnlocked": true,
+  "alwaysUnlocked": false,
 }

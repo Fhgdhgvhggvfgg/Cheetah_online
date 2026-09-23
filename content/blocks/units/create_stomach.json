@@ -87,5 +87,5 @@
 "size":2,
 "type":"UnitFactory",
 "unitCapModifier":5,
-    alwaysUnlocked: true
+    alwaysUnlocked: false
 }

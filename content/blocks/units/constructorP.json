@@ -18,5 +18,5 @@
     "coin/450",
   ]
   
-      alwaysUnlocked: true
+      alwaysUnlocked: false
 }

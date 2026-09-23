@@ -1,6 +1,6 @@
-name: jeff core
+name: lora core
   type: CoreBlock
-  health: 30000
+  health: 33000
   size: 10
   armor: 10
   isFirstTier: false
@@ -8,7 +8,8 @@ name: jeff core
   unitCapModifier: 60
   buildCostMultiplier: 0.7
   squareSprite: false
-  unitType: jeff
+    "thrusterLength": 30
+  unitType: jeen
   "requirements": [
     {
       "item": "coin",
@@ -18,7 +19,7 @@ name: jeff core
   ],
   "category": "units"
 
-  alwaysUnlocked: true
+  alwaysUnlocked: false
   drawCracks: true
   createRubble: true
   category: effect

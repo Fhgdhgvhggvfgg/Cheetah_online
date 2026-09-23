@@ -75,5 +75,5 @@
     "power": 4
   },
   "areaSize": 18,
-  "alwaysUnlocked": true
+  "alwaysUnlocked": false
 }

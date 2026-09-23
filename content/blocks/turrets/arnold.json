@@ -88,4 +88,4 @@ coin/1600
 ]
 category: turret
 
-    alwaysUnlocked: true
+    alwaysUnlocked: false

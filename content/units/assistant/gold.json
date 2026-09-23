@@ -1,5 +1,5 @@
 {
-alwaysUnlocked: true
+alwaysUnlocked: false
 "template": "ErekirUnitType",
 canAttack:false,
 lifetime: 999999999999999999,

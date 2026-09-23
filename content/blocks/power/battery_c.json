@@ -17,4 +17,4 @@ requirements: [
 coin/60
 ]
 category: power
-alwaysUnlocked: true
+alwaysUnlocked: false

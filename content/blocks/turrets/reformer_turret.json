@@ -139,7 +139,7 @@ shootType: {
   trailLength: 4
   trailColor: "00ffff"
 }
-alwaysUnlocked: true
+alwaysUnlocked: false
 requirements: [
   coin/50
 ]

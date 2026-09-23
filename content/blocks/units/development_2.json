@@ -43,5 +43,5 @@
     
   ]
   category: units
-      alwaysUnlocked: true
+      alwaysUnlocked: false
 }

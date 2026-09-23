@@ -83,4 +83,4 @@ weapons: [
 
 
 
-    alwaysUnlocked: true
+    alwaysUnlocked: false

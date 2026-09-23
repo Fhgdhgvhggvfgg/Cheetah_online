@@ -97,4 +97,4 @@ coin/450
 ]
 category: turret
 parent: lancer
-    alwaysUnlocked: true
+    alwaysUnlocked: false

@@ -23,5 +23,5 @@
   
   "health": 700,
   "category": "production", 
-   alwaysUnlocked: true
+   alwaysUnlocked: false
 }

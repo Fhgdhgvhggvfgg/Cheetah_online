@@ -30,5 +30,5 @@
   "warmup": 60,
   "activeEffectIntensity": 0.6,
   "health": 2400,
-alwaysUnlocked: true
+alwaysUnlocked: false
 }

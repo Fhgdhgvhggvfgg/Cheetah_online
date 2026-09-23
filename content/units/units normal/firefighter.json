@@ -78,6 +78,6 @@ abilities:[
   
 
 ]
-alwaysUnlocked: true
+alwaysUnlocked: false
 
 }

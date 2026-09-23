@@ -12,6 +12,7 @@ drag: 0.08
 "omniMovement": false,
 "faceTarget": false,
 "health": 3000,
+"faceTarget": true,
 "armor": 20,
 "speed": 6,
 "rotateSpeed": 6,

@@ -35,13 +35,13 @@ weapons: [
                 rotate: false
                 x: 0
                 y: 0
-                reload: 4000
+                reload: 7000
                 shootSound: iron_door
                 shootY: 0
                 alwaysShooting: true
 
 shoot: {
-firstShotDelay: 1000
+firstShotDelay: 3100
 }
 
                 

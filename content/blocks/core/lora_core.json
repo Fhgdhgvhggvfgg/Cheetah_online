@@ -1,6 +1,6 @@
 name: lora core
   type: CoreBlock
-  health: 33000
+  health: 36000
   size: 10
   armor: 10
   isFirstTier: false
@@ -9,7 +9,7 @@ name: lora core
   buildCostMultiplier: 0.7
   squareSprite: false
     "thrusterLength": 30
-  unitType: jeen
+  unitType: lora
   "requirements": [
     {
       "item": "coin",
@@ -19,7 +19,7 @@ name: lora core
   ],
   "category": "units"
 
-  alwaysUnlocked: true
+  alwaysUnlocked: false
   drawCracks: true
   createRubble: true
   category: effect

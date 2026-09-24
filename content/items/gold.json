@@ -1,0 +1,11 @@
+{
+  "type": "item",
+  "name": "gold",
+  "localizedName": "gold",
+  "description": "",
+  "transitionFrames": 0
+    "frames": 5,
+  "frameTime": 6,
+  "color": FAE965
+      alwaysUnlocked: true
+}

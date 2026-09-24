@@ -1,0 +1,69 @@
+{
+alwaysUnlocked: true
+accel: 0.06
+drag: 0.06
+"template": "ErekirUnitType",
+alwaysUnlocked: false,
+canAttack:true,
+coreUnitDock:true,
+flying:true,
+defaultCommand: repair
+buildRange:90,
+buildSpeed:0.3,
+health:800,
+outlineColor: 00000000
+hitSize: 14
+  "engineSize": 0, 
+localisedName: "dron cristal",
+speed: 6,
+rotateSpeed: 10
+"type":"flying",
+
+abilities:[
+
+]
+
+"weapons":[
+
+    {
+    "layerOffset": -0.0001, 
+        rotate: false
+        mirror: false
+        shootY: 3
+        x: 0
+        y: 0
+        reload: 30
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: shovelS
+        
+    bullet: {
+      type: LaserBulletType
+                      "collidesTeam":true,
+                      recoil: -3.5
+                "healPercent":1,
+        length: 80
+        width: 1
+        damage: 7
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+        		splashDamageRadius: 50
+		splashDamage: 13
+		hitEffect: blastExplosion
+        trailLength: 4
+                        "collidesTeam":true,
+                "healPercent":1,
+        trailColor: ff0000
+    }
+    }
+]
+alwaysUnlocked: true
+}

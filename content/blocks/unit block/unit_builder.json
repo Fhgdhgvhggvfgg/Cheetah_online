@@ -1,0 +1,76 @@
+{
+  "researchCostMultiplier": 0.5,
+  "type": "UnitAssembler",
+  "name": "unit builder",
+  "description": "A workshop that integrates soldiers with equipment needs to place a planning device in front of the development area.
+",
+  "size": 4,
+  "configurable": true,
+  "category": "units",
+  "droneType": "assembly-drone",
+  "dronesCreated": 4,
+  "droneConstructTime": 60,
+  "requirements": [
+    "cristal/80"
+    "elixir/160"
+    "obsidian/180"
+  ],
+  "plans": [
+    
+            {
+      "type": "AssemblerUnitPlan",
+      "unit": "archer",
+      "requirements": [
+        "cheetah-x-gold_sheets/1"
+        "cheetah-x-obsidian_alloy/2"
+      ],
+      "time": 1000
+    }
+    
+    
+        {
+      "type": "AssemblerUnitPlan",
+      "unit": "excavator",
+      "requirements": [
+        "cheetah-x-gold_sheets/2"
+        "cheetah-x-control_box/1"
+        "cheetah-x-obsidian_alloy/2"
+        "cheetah-x-wheelbox/4"
+      ],
+      "time": 2500
+    }
+    
+            {
+      "type": "AssemblerUnitPlan",
+      "unit": "valka_gate",
+      "requirements": [
+        "cheetah-x-gold_sheets/2"
+        "cheetah-x-craft_elixir/6"
+        "cheetah-x-obsidian_alloy/6"
+      ],
+      "time": 3400
+    }
+    
+                {
+      "type": "AssemblerUnitPlan",
+      "unit": "pyramid",
+      "requirements": [
+        "cheetah-x-eye_triangle/1"
+        "cheetah-x-gold_sheets/8"
+        "cheetah-x-obsidian_alloy/10"
+      ],
+      "time": 5500
+    }
+    
+  ],
+  "squareSprite": false,
+  consumes: {
+    power: 1
+        "liquid": {
+      "liquid": "elixir_iquid",
+      "amount": 0.05
+    }
+    }
+  "areaSize": 18,
+  "alwaysUnlocked": true
+}

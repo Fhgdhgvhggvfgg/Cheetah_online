@@ -7,7 +7,7 @@
   "health": 300,
   "itemCapacity": 200,
   "size": 1,
-  "requirements": [{"item":"coin","amount":1}]
+  "requirements": [{"item":"obsidian","amount":3}]
   "category": "distribution",
   
   alwaysUnlocked: true

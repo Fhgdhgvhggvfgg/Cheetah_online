@@ -16,13 +16,13 @@ contorller:BuilderAI,
 coreUnitDock:true,
 defaultController: BuilderAI,
 flying:true,
-health:3000,
+health:1500,
   "engineSize": 0, 
-itemCapacity: 150,
+itemCapacity: 100,
 localisedName: "keven",
 mineFloor:true
-mineRange: 170
-"mineSpeed":20,
+mineRange: 120
+"mineSpeed":10,
 mineTier: 11
 mineWalls:true
 speed: 9,
@@ -39,8 +39,8 @@ under: false
 outline: false
 x: 0
 y: 0
-moveY: -25
-moveX: -25
+moveY: -30
+moveX: 0
 progress: warmup
 
 
@@ -61,18 +61,18 @@ colorTo: ffffffb3
 
 {
 type: RegionPart
-suffix: -full
+suffix: -photo
 mirror: false
 under: false
 outline: false
 x: 0
 y: 0
-moveRot: -360
+moveRot: 0
 progress: warmup
 color: ffffff00
 colorTo: ffffffb3
-growX: -0.2
-growY: -0.2
+growX: -0.8
+growY: -0.8
 }
 
 ]
@@ -88,8 +88,9 @@ abilities:[
 
 weapons: [
    {
+   shootWarmupSpeed: 10
    name: nuclear
-    x: 0
+    x: 3
     y: 0
     reload: 34
     recoil: 0
@@ -97,14 +98,14 @@ weapons: [
     "heatColor": "FFFFFF",
     alternate: true
     shootY: 16
-    mirror: false
+    mirror: true
     rotate: false
     shootSound: bolt
        bullet: {
       type: LaserBulletType
         length: 220
         width: 6
-        damage: 100
+        damage: 70
         hitEffect: lightningShoot
         shootEffect: lightningShoot
         colors: [
@@ -118,107 +119,7 @@ weapons: [
     }
 }
 
-   {
-   name: load_spirit_energy
-               shoot: {
-                     shots: 1
-      shotDelay: 0
-firstShotDelay: 0
-}
-    x: 0
-    y: -40
-    reload: 1900
-    shootWarmupSpeed: 0.006
-    minWarmup: 0.99
-    recoil: 0
-     "heatTime": 90,
-    "heatColor": "FFFFFF",
-    alternate: true
-    shootY: 0
-    mirror: false
-    rotate: false
-    shootSound: iron_door
-    
-bullet: {    
-     type: SolidBulletType
-                damage: 1
-                homing: false
-                speed: 1
-                scaleLife: true          
-                lifetime: 1                
-         fragBullets: 1
-        fragVelocityMin: 0.2
-        fragRandomSpread: 180
-        fragSpread: 360
-        fragLifeMin: 0.8
-        fragBullet: {
-      type: BasicBulletType
-        spawnUnit: spirit_energy
-       }
-       }
-       
-         "parts": [
-{
-type: RegionPart
-suffix: -load
-mirror: false
-    "layerOffset": -0.0001, 
-under: false
-outline: false
-x: 0
-y: 0
-progress: recoil
-moveRot: -180
-       
-       }
-       
-       {
-type: RegionPart
-suffix: -energy1
-mirror: false
-    "layerOffset": 0.0001, 
-under: false
-outline: false
-x: 0
-y: 0
-progress: warmup
-moveRot: -7000
-color: ffffffff
-       
-       }
-       
-              {
-type: RegionPart
-suffix: -energy3
-mirror: false
-    "layerOffset": 0.0001, 
-under: false
-outline: false
-x: 0
-y: 0
-progress: warmup
-moveRot: -4000
-color: ffffffff
-       
-       }
-       
-                     {
-type: RegionPart
-suffix: -energy2
-mirror: false
-    "layerOffset": 0.0001, 
-under: false
-outline: false
-x: 0
-y: 0
-progress: warmup
-moveRot: -6000
-color: ffffffff
-       
-       }
-       
-   ]
-   }
+
    ]
    
 "deathSound": "keven_die",

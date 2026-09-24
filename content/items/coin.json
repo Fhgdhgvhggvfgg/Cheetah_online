@@ -1,0 +1,11 @@
+{
+  "type": "item",
+  "name": "coin",
+  "localizedName": "coin power",
+  "description": "A powerful currency in which you can build the strongest equipment.",
+  "transitionFrames": 0
+    "frames": 4,
+  "frameTime": 4,
+  "color": 444444
+      alwaysUnlocked: true
+}

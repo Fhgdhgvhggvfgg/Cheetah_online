@@ -1,0 +1,92 @@
+name: bulldozer girl level 2
+"template": "ErekirUnitType",
+description: Cheetah girl drives a bulldozer level 2, killing enemies with its kill drill It is rebuilding any debris in the camp. and the vehicle deploys a drone that sprays water on the fires.
+type: mech 
+ "range": 40,
+  "maxRange": 40,
+mechLegColor: 00000000
+health: 6700
+armor: 1
+hitSize: 42
+speed: 3
+rotateSpeed: 3.6
+accel: 0.15
+stepShake: 0
+mechFrontSway: 0
+mechSideSway: 0
+itemCapacity: 12
+hitShake: 0
+outlineColor: 00000000
+buildRange:110,
+buildSpeed:1.2,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -46
+moveX: -46
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.1
+growY: -0.1
+
+}
+  ]
+
+
+abilities:[
+
+]
+
+weapons: [
+    {
+    "layerOffset": -0.0001, 
+        name: kill_drill
+        rotate: false
+        mirror: false
+        shootY: 3
+        x: 0
+        y: 32
+        reload: 3
+        recoil: -4
+        ejectEffect: casing2
+        shootSound: shovelS
+            shoot: {
+firstShotDelay: 0
+}
+        
+    bullet: {
+      type: LaserBulletType
+        length: 31
+        width: 1
+        damage: 7
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+        		splashDamageRadius: 60
+		splashDamage: 46
+		hitEffect: blastExplosion
+        trailLength: 4
+        trailColor: ff0000
+    }
+    }
+ ]
+
+    alwaysUnlocked: true

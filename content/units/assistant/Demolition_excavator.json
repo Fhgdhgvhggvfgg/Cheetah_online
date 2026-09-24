@@ -1,0 +1,65 @@
+name: Destructive excavator
+description: A digger that destroys all enemies within its range.
+speed: 0
+flying: false
+"engineSize": 0, 
+"template": "ErekirUnitType",
+type: missile
+useUnitCap: false
+lifetime: 600
+health: 2100
+armor: 20
+rotateSpeed: 6
+hitSize: 38
+mechStepParticles: true
+stepShake: 1
+drownTimeMultiplier: 200
+mechFrontSway: 1
+mechSideSway: 1
+
+abilities: [
+
+	
+	]
+
+weapons: [
+    {
+    "layerOffset": -0.0001, 
+        name: stent
+        rotate: false
+        mirror: false
+        shootY: 3
+        x: 0
+        y: 18
+        reload: 27
+        recoil: -6
+        ejectEffect: casing2
+        shootSound: shovelS
+        
+    bullet: {
+      type: LaserBulletType
+        length: 50
+        width: 1
+        damage: 7
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+        		splashDamageRadius: 32
+		splashDamage: 130
+		hitEffect: blastExplosion
+        trailLength: 4
+        trailColor: ff0000
+    }
+    }
+ ]
+
+
+
+    alwaysUnlocked: true

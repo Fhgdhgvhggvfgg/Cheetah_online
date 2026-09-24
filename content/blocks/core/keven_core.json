@@ -1,27 +1,19 @@
 name: keven core
   type: CoreBlock
-  health: 20000
-  size: 6
+  health: 35000
+  size: 10
   armor: 10
   isFirstTier: false
-  itemCapacity: 10000
-  unitCapModifier: 40
+  itemCapacity: 60000
+  unitCapModifier: 60
   buildCostMultiplier: 0.7
   squareSprite: false
     "thrusterLength": 30
   unitType: keven
   "requirements": [
     {
-      "item": "cristal",
-      "amount": 30
-    },
-        {
-      "item": "gold",
-      "amount": 100
-    },
-            {
-      "item": "elixir",
-      "amount": 45
+      "item": "coin",
+      "amount": 0
     },
     
   ],

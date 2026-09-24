@@ -1,0 +1,47 @@
+{
+  type: "Reconstructor"
+  size: 4
+  constructTime: 5000
+  name: development
+  consumes: {
+    power: 3
+     items: [
+     {"item":"coin","amount":860},
+      ]
+  }
+  requirements: [
+     {"item":"coin","amount":600},
+    ]
+  upgrades: [
+    
+
+
+    [
+    bulldozer_girl_2
+    bulldozer_girl_3
+    ]
+    
+    [
+    driver_jon_2
+    driver_jon_3
+    ]
+    
+    [
+    guardian_of_sky_2
+    guardian_of_sky_3
+    ]
+    
+      [
+    leena_injured
+    leena_biker
+    ]
+    
+          [
+    firefighter_injured
+    firefighter_x
+    ]
+    
+  ]
+  category: units
+      alwaysUnlocked: true
+}

@@ -1,0 +1,79 @@
+{
+  "researchCostMultiplier": 0.5,
+  "type": "UnitAssembler",
+  "name": "units development power",
+  "description": "A workshop that integrates soldiers with equipment needs to place a planning device in front of the development area.
+",
+  "size": 4,
+  "configurable": true,
+  "category": "units",
+  "droneType": "assembly-drone",
+  "dronesCreated": 4,
+  "droneConstructTime": 60,
+  "requirements": [
+    "coin/600"
+  ],
+  "plans": [
+  
+    {
+      "type": "AssemblerUnitPlan",
+      "unit": "firefighter_x",
+      "requirements": [
+        "cheetah-01-reformer_turret/8",
+        "cheetah-01-firefighter/1",
+        "cheetah-01-wall_01/8",
+        "cheetah-01-battery_c/18",
+        "cheetah-01-energy_plant/18",
+        "cheetah-01-create_silicon/30"
+      ],
+      "time": 3000
+    }
+    
+    {
+      "type": "AssemblerUnitPlan",
+      "unit": "jeen_fire",
+      "requirements": [
+        "cheetah-01-jeen/1",
+        "cheetah-01-sword/1",
+        "cheetah-01-bra/1",
+        "cheetah-01-accessories/1"
+        "cheetah-01-skirt/1"
+      ],
+      "time": 3000
+    }
+    
+        {
+      "type": "AssemblerUnitPlan",
+      "unit": "jeff_irani",
+      "requirements": [
+        "cheetah-01-jeff/1",
+        "cheetah-01-gold/1",
+        "cheetah-01-accessories/1"
+        "cheetah-01-skirt/1"
+        "cheetah-01-iranian_flag/1"
+      ],
+      "time": 2800
+    }
+    
+            {
+      "type": "AssemblerUnitPlan",
+      "unit": "leena_biker",
+      "requirements": [
+        "cheetah-01-leena/1",
+        "cheetah-01-leena_clothes/1",
+        "cheetah-01-battery_c/6",
+        "cheetah-01-robot_arm/1"
+        "cheetah-01-energy_plant/4"
+         "cheetah-01-processor/1"
+      ],
+      "time": 2800
+    }
+    
+  ],
+  "squareSprite": false,
+  "consumes": {
+    "power": 4
+  },
+  "areaSize": 18,
+  "alwaysUnlocked": true
+}

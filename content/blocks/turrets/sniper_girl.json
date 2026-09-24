@@ -1,0 +1,76 @@
+description:Cheetah girl sniper kills enemies from afar.
+name: sniper girl
+type: ItemTurret
+reload: 180
+rotateSpeed: 5
+targetGround: true
+targetAir: true
+"outlineColor": "00000000"
+range: 160
+recoil: 0
+shootSound: bang
+size: 3
+health: 2800
+shootY: 20
+ambientSound: preparing_rifle
+
+drawer: {
+  type: DrawTurret
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: -30
+moveX: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.15
+growY: -0.15
+}
+  ]
+  }
+
+
+            shoot: {
+      shots: 14
+      shotDelay: 6
+    }
+    
+AmmoPerShot: 5
+coolant: {
+  type: ConsumeCoolant
+  allowGas: true
+  allowLiquid: true
+  amount: 0.3
+}
+
+
+ammoTypes: {
+    
+        coin: {
+        damage: 20
+        speed: 8
+        height: 8
+        width: 2
+        lifetime: 20
+        fragOnHit: true
+		fragBullets: 50
+    }
+    
+
+}
+requirements: [
+coin/45
+]
+category: turret
+
+    alwaysUnlocked: true

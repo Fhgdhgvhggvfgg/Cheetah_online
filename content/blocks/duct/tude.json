@@ -1,8 +1,0 @@
-category:liquid
-"name": "tude",
-health:150
-localizedName:"titanium enforeced conduit"
-liquidCapacity:15
-requirements:[cristal/2]
-Type:Conduit
-alwaysUnlocked: true

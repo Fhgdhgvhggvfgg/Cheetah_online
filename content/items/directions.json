@@ -1,0 +1,11 @@
+{
+  "type": "item",
+  "name": "directions",
+  "localizedName": "directions",
+  "description": "Instructions element. Print it on the screen using the commands. Or access the edit map.",
+  "transitionFrames": 0
+    "frames": 8,
+  "frameTime": 200,
+  "color": ffffff00
+      alwaysUnlocked: true
+}

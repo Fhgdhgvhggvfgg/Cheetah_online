@@ -1,0 +1,133 @@
+{
+"description": "Cheetah Man 3 level, a professional war car driver. He has a machine power gun",
+"name":"driver jon 4",
+"type": "tank",
+"hitSize": 50,
+accel: 0.05
+drag: 0.07
+"crushDamage": 2,
+"template": "ErekirUnitType",
+"treadPullOffset": 6,
+"singleTarget": false,
+"omniMovement": false,
+"faceTarget": false,
+"health": 3800,
+"armor": 20,
+"speed": 6,
+"rotateSpeed": 8,
+"itemCapacity": 0,
+"outlineColor": "00000000",
+"treadRects": [
+    {
+      "x": 29,
+      "y": -84,
+      "width": 19,
+      "height": 170
+    }
+  ],
+  
+  
+    "parts": [
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: -40
+moveX: -40
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.2
+growY: -0.2
+}
+
+
+  ]
+
+  
+
+abilities:[
+
+]
+
+
+"weapons": [
+    {
+                name: spawn_air_force
+                mirror: false
+                top: true
+                rotate: true
+		rotateSpeed: 5
+		shootY: 12
+                x: 0
+                y: -10
+                reload: 360
+                shootSound: bang
+                    "parts": [
+                {
+  "layerOffset": 0.0002, 
+type: RegionPart
+suffix: -door
+mirror: true
+under: false
+outline: false
+x: 0
+y: 3
+moveY: -5
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+scl: 0.1
+growX: 0
+growY: -2
+
+}
+                ]
+                
+                shoot: {
+      shots: 1
+      shotDelay: 12
+    }
+            bullet: {
+              type: SolidBulletType
+                damage: 100
+                homing: false
+                speed: 10
+                scaleLife: true
+                sprite: large-bomb
+                lifetime: 39
+                knockback: -1
+                backColor: 8DEEEB
+                frontColor: 8DEEEB
+                mixColorFrom: 8DEEEB
+                mixColorTo: 8DEEEB
+                width: 34
+                height: 10
+         fragBullets: 1
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+      type: BasicBulletType
+        spawnUnit: air_force
+       }
+       }
+                
+}
+   
+
+
+  ]
+  
+      alwaysUnlocked: true
+}

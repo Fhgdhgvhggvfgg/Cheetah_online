@@ -1,7 +1,7 @@
-require("dialogs");
 
-//================================================================
-
+// ==========================================================
+// 1. إعدادات الزووم (Zoom Logic)
+// ==========================================================
 const defaultMinZoomLim = Vars.renderer.minZoom;
 const defaultMaxZoomLim = Vars.renderer.maxZoom;
 const minZoomLim = 0.5;
@@ -14,38 +14,16 @@ function updateZoom(min, max){
 
 if(!Vars.headless) updateZoom(minZoomLim, maxZoomLim);
 
-//================================================================
-
-Timer.schedule(() => {
-    if (Vars.state.isGame()) {
-        let playerCore = Vars.player.team().core();
-        
-        // التحقق من أن النواة موجودة وليست فارغة
-        if (playerCore != null) {
-            let randomNum = Math.floor(Math.random() * 4);
-            
-            if (!Vars.state.isPaused()){
-            if (randomNum == 1) {
-                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 2);
-            } else if (randomNum == 2) {
-                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 3);
-            } else if (randomNum == 3) {
-                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 1);
-            } else {
-            	
-            }
-            }
-        }
-    }
-}, 10, 4);
-
-
-
-//================================================================
-
+// ==========================================================
+// 2. قراءة الإعدادات والمتغيرات
+// ==========================================================
+const config = JSON.parse(Jval.read(Vars.tree.get("data/config.hjson").readString()));
 var active = false;
 var table;
 
+// ==========================================================
+// 3. دالة إنشاء واجهة التحكم (HUD Table)
+// ==========================================================
 function newTable() {
     let t = new Table();
     t.bottom().left();
@@ -57,7 +35,7 @@ function newTable() {
     });
 
     t.visibility = () => {
-        return Vars.ui.hudfrag.shown && !Vars.ui.consolefrag.shown() && !Vars.ui.minimapfrag.shown() && !Vars.net.client();
+        return Vars.ui.hudfrag.shown && !Vars.ui.consolefrag.shown() && !Vars.ui.minimapfrag.shown() && !Vars.net.client() && (Vars.state.rules.sector == null || config.cheatMode == true);
     };
 
     t.clicked(() => {
@@ -68,164 +46,504 @@ function newTable() {
     return t;
 }
 
+// ==========================================================
+// 4. معالجة تحميل اللعبة والأيقونة (الموقع المحسن)
+// ==========================================================
+
+// c    f       2      v      1
+// a    a      0      e       -
+// r     s      _      n
+// s     t      k      -
+// .     1      e      0
+
+
+let screenW = 10;
+
+
+Events.on(ClientLoadEvent, () => {
+    table = newTable();
+    
+Time.run(60, () => {
+
+    let region = Core.atlas.find("cheetah-01-group-photo");
+    if(!region.found()) region = Core.atlas.find("cheetah01-group-photo");
+    if(!region.found()) region = Core.atlas.find("group-photo");
+    
+    let powC = Core.atlas.find("cheetah-01-lora-photo");
+    if(!powC.found()) powC = Core.atlas.find("cheetah01-lora-photo");
+    if(!powC.found()) powC = Core.atlas.find("lora-photo");
+    
+    let powG = Core.atlas.find("cheetah-01-jeen-photo");
+    if(!powG.found()) powG = Core.atlas.find("cheetah01-jeen-photo");
+    if(!powG.found()) powG = Core.atlas.find("jeen-photo");
+    
+    let jon_portrays = Core.atlas.find("cheetah-01-jon_portrays");
+    if(!jon_portrays.found()) jon_portrays = Core.atlas.find("cheetah01-jon_portrays");
+    if(!jon_portrays.found()) jon_portrays = Core.atlas.find("jon_portrays");
+
+    let lora_hug = Core.atlas.find("cheetah-01-lora_hug");
+    if(!lora_hug.found()) lora_hug = Core.atlas.find("cheetah01-lora_hug");
+    if(!lora_hug.found()) lora_hug = Core.atlas.find("lora_hug");
+    
+    let leena_shore = Core.atlas.find("cheetah-01-leena_shore");
+    if(!leena_shore.found()) leena_shore = Core.atlas.find("cheetah01-leena_shore");
+    if(!leena_shore.found()) leena_shore = Core.atlas.find("leena_shore");    
+
+    let jeff_iran = Core.atlas.find("cheetah-01-jeff_iran");
+    if(!jeff_iran.found()) jeff_iran = Core.atlas.find("cheetah01-jeff_iran");
+    if(!jeff_iran.found()) jeff_iran = Core.atlas.find("jeff_iran");    
+
+
+
+
+        Vars.ui.menuGroup.fill(Cons(t => {           
+t.clear(); // تنظيف الطبقات القديمة 
+            t.left().bottom(); // نقطة الصفر أسفل يسار
+            
+            // --- المتغيرات الخاصة بك ---
+            let widthjeX = screenW * 11; 
+            let heightjeY = screenW * 13;             
+            let posjeX = 0;      
+            let posjeY = 120;     
+            
+            // إضافة الصورة كـ "Cell" داخل الجدول واستخدام الحواف (Padding) للتحريك
+            // هذه الطريقة تجبر المحرك على احترام المسافات التي تضعها
+     if (Vars.content.getByName(ContentType.block, "cheetah-01-plan2").unlocked()){                   
+            t.image(jeff_iran)
+             .size(Scl.scl(widthjeX), Scl.scl(heightjeY))
+             .padLeft(Scl.scl(posjeX))
+             .padBottom(Scl.scl(posjeY))
+             .get().toFront();   }   
+                                   
+        }));
+
+
+
+
+
+
+        Vars.ui.menuGroup.fill(Cons(t => {           
+t.clear(); // تنظيف الطبقات القديمة 
+            t.left().top(); // نقطة الصفر أسفل يسار
+            
+            // --- المتغيرات الخاصة بك ---
+            let widthleX = screenW * 12; 
+            let heightleY = screenW * 14;             
+            let posleX = 0;      
+            let posleY = -300;     
+            
+            // إضافة الصورة كـ "Cell" داخل الجدول واستخدام الحواف (Padding) للتحريك
+            // هذه الطريقة تجبر المحرك على احترام المسافات التي تضعها
+     if (Vars.content.getByName(ContentType.block, "cheetah-01-leena").unlocked()){                   
+            t.image(leena_shore)
+             .size(Scl.scl(widthleX), Scl.scl(heightleY))
+             .padLeft(Scl.scl(posleX))
+             .padBottom(Scl.scl(posleY))
+             .get().toFront();   }   
+                                   
+        }));
+
+
+
+        Vars.ui.menuGroup.fill(Cons(t => {           
+t.clear(); // تنظيف الطبقات القديمة 
+            t.right().bottom(); // نقطة الصفر أسفل يسار
+            
+            // --- المتغيرات الخاصة بك ---
+            let widthlX = screenW * 12; 
+            let heightlY = screenW * 18.7;             
+            let poslX = 0;      
+            let poslY = 280;     
+            
+            // إضافة الصورة كـ "Cell" داخل الجدول واستخدام الحواف (Padding) للتحريك
+            // هذه الطريقة تجبر المحرك على احترام المسافات التي تضعها
+        if (Vars.content.getByName(ContentType.block, "cheetah-01-lora_core").unlocked()) {               
+            t.image(lora_hug)
+             .size(Scl.scl(widthlX), Scl.scl(heightlY))
+             .padLeft(Scl.scl(poslX))
+             .padBottom(Scl.scl(poslY))
+             .get().toFront();  }            
+                                   
+           }));                     
+                                   
+        Vars.ui.menuGroup.fill(Cons(t => {           
+t.clear(); // تنظيف الطبقات القديمة 
+            t.right().bottom(); // نقطة الصفر أسفل يسار                                   
+            // --- المتغيرات الخاصة بك ---
+            let sizej = screenW * 15; 
+            let posjX = 0;      
+            let posjY = 140;     
+            
+            // إضافة الصورة كـ "Cell" داخل الجدول واستخدام الحواف (Padding) للتحريك
+            // هذه الطريقة تجبر المحرك على احترام المسافات التي تضعها
+      if(Vars.content.getByName(ContentType.unit, "cheetah-01-driver_jon").unlocked())     {             
+            t.image(jon_portrays)
+             .size(sizej)
+             .padLeft(Scl.scl(posjX))
+             .padBottom(Scl.scl(posjY))
+             .get().toFront();      }  
+                                   
+        }));
+        
+    
+    
+    
+            Vars.ui.menuGroup.fill(Cons(t => {           
+t.clear(); // تنظيف الطبقات القديمة 
+            t.center().bottom(); // نقطة الصفر أسفل يسار
+            
+            // --- المتغيرات الخاصة بك ---
+            let widthX = screenW * 25; 
+            let heightY = screenW * 10; 
+            let posX = 0;      
+            let posY = 10;     
+            
+            // إضافة الصورة كـ "Cell" داخل الجدول واستخدام الحواف (Padding) للتحريك
+            // هذه الطريقة تجبر المحرك على احترام المسافات التي تضعها
+            
+            
+            t.image(region)
+             .size(Scl.scl(widthX), Scl.scl(heightY))
+             .padLeft(Scl.scl(posX))
+             .padBottom(Scl.scl(posY))
+             .get().toFront(); 
+                                             
+        }));
+    
+    
+
+        Vars.ui.menuGroup.fill(Cons(t => {           
+        	t.clear(); // تنظيف الطبقات القديمة 
+            t.center().top(); // نقطة الصفر أسفل يسار
+            
+            
+            let icon3Size = screenW * 24;
+            let pos3X = 0;      
+            let pos3Y = -130;
+            
+            let icon2Size = screenW * 24;
+            let pos2X = 0;      
+            let pos2Y = -130;
+            
+            // إضافة الصورة كـ "Cell" داخل الجدول واستخدام الحواف (Padding) للتحريك
+            // هذه الطريقة تجبر المحرك على احترام المسافات التي تضعها
+                                   
+             t.image(powG)
+             .size(icon3Size)
+             .padLeft(Scl.scl(pos3X))
+             .padBottom(Scl.scl(pos3Y))
+             .get().toFront(); 
+             
+                 t.image(powC)
+             .size(icon2Size)
+             .padLeft(Scl.scl(pos2X))
+             .padBottom(Scl.scl(pos2Y))
+             .get().toFront(); 
+             
+        }));
+    
+    });
+    
+});
+
+// ==========================================================
+// 5. إدارة الأحداث (Events)
+// ==========================================================
+Events.on(ResetEvent, () => {
+    active = false;
+    Vars.state.rules.editor = active;
+});
+
 Events.on(WorldLoadEvent, () => {
     active = false;
+    let testUtils = Vars.mods.getMod("test-utils");
+    let timeControl = Vars.mods.getMod("time-control");
+    let upOffset = 0;
+
     try { Vars.ui.hudGroup.removeChild(table); } catch(e) {}
-    table = newTable();
-    if (!Vars.state.rules.editor) {
-        Vars.ui.hudGroup.addChild(table);
+
+    if (testUtils != null && testUtils.isSupported() && testUtils.enabled()) {
+        upOffset += (Vars.state.rules.sector != null) ? 60 : 120;
     }
+    if (timeControl != null && timeControl.isSupported() && timeControl.enabled()) upOffset += 68;
+    if (Vars.mobile) upOffset += 46;
+
+
+    if (!Vars.state.rules.editor) Vars.ui.hudGroup.addChild(table);
+    
+    
+    
     try { table.setPosition(0, 230); } catch(e) {}
 });
 
-//===================================================================
+// ==========================================================
+// 6. التحديث المستمر
+// ==========================================================
+Events.run(Trigger.update, () => {
+    if(active && Core.scene.getDialog() == Vars.ui.paused) {
+        Vars.state.rules.editor = false;
+        active = false;
+    }
+});
 
+
+//===========================
+
+const emerald = Vars.tree.loadSound("emerald"); 
+    const open_element = Vars.tree.loadSound("open_element");
+    let suondN = 4;
+
+// ننتظر حتى تكتمل تحميلات العميل (اللاعب) قبل تسجيل الحدث
+Events.on(ClientLoadEvent, e => {
+
+
+
+    // 2. حدث تدمير المباني
     Events.on(BlockDestroyEvent, event => {
         let core = Vars.player.team().core();
         if (event.tile.team() != Vars.player.team()) {
             if (core != null) {
                 // تدمير الأبراج
                 if (event.tile.block() instanceof Turret) {
-                    core.items.add(Vars.content.item("cheetah-x-elixir"), 4);
-                    core.items.add(Vars.content.item("cheetah-x-ram_c"), 1);
+                    core.items.add(Vars.content.item("cheetah-01-coin"), 3);
                 }
                 // تدمير المصانع
                 else if (event.tile.block() instanceof GenericCrafter) {
-                    core.items.add(Vars.content.item("cheetah-x-gold"), 1);
-                    core.items.add(Vars.content.item("cheetah-x-ram"), 3);
+                    core.items.add(Vars.content.item("cheetah-01-coin"), 1);
                 }
                 // تدمير مصانع الوحدات
                 else if (event.tile.block() instanceof UnitFactory) {
-                    core.items.add(Vars.content.item("cheetah-x-cristal"), 3);
-                 core.items.add(Vars.content.item("cheetah-x-ram"), 6);
+                    core.items.add(Vars.content.item("cheetah-01-coin"), 10);
+                    core.items.add(Vars.content.item("cheetah-01-emerald"), 2);
+                    Vars.ui.showInfoFade("you won 2 emeralds");
+                    emerald.play(1.0);
                 }
                 // تدمير النواة (الـ Core)
+                else if (event.tile.block() instanceof CoreBlock) {
+                    core.items.add(Vars.content.item("cheetah-01-coin"), 450);
+                    core.items.add(Vars.content.item("cheetah-01-emerald"), 60);
+                    Vars.ui.showInfoFade("you won 60 emeralds");
+                    emerald.play(1.0);
+                }
             }
         }
     });
-    
-
-//===================================================================
-
-Events.on(UnitDestroyEvent, event => {
-    let unit = event.unit;
-    let core = Vars.player.team().core();
-    
-    // التأكد من أن الوحدة موجودة وتنتمي لنفس فريق اللاعب
-    if (unit != null && unit.team == Vars.player.team()) {
-        // التحقق من اسم الوحدة البري عن طريق النص لتجنب مشاكل التحميل
-        if (unit.type.name.includes("gold_alien")) {
-            
-            if (core != null) {
-                core.items.add(Vars.content.item("cheetah-x-gold"), 40);
-            }
-        }
-    }
-    
-    if (unit != null && unit.team != Vars.player.team()) {
-    	if (unit.isFlying()) {
-    	}else {
-    	            
-            if (core != null) {
-    	core.items.add(Vars.content.item("cheetah-x-ram"), 1);
-    }
-    }
-    	
-    	}
 });
 
-//========================================================
+
+
+//==============================================
+// تحميل واجهة اللعب (game play)
+//================================================
 
 Events.on(ClientLoadEvent, function() {
     var iconTable = new Table();
     iconTable.top().left();
     iconTable.setFillParent(true);
     iconTable.touchable = Touchable.disabled;
-   
+    
+    let selver_logo = Core.atlas.find("cheetah-01-selver_logo");
+    if(!selver_logo.found()) selver_logo = Core.atlas.find("cheetah01-selver_logo");
+    if(!selver_logo.found()) selver_logo = Core.atlas.find("selver_logo");    
+    
+     let gold_logo = Core.atlas.find("cheetah-01-gold_logo");
+    if(!gold_logo.found()) gold_logo = Core.atlas.find("cheetah01-gold_logo");
+    if(!gold_logo.found()) gold_logo = Core.atlas.find("gold_logo");    
+    
+     let diamond_logo = Core.atlas.find("cheetah-01-diamond_logo");
+    if(!diamond_logo.found()) diamond_logo = Core.atlas.find("cheetah01-diamond_logo");
+    if(!diamond_logo.found()) diamond_logo = Core.atlas.find("diamond_logo");    
+    
+    let glass_icon = Core.atlas.find("cheetah-01-glass_icon");
+    if(!glass_icon.found()) glass_icon = Core.atlas.find("cheetah01-glass_icon");
+    if(!glass_icon.found()) glass_icon = Core.atlas.find("glass_icon");    
+    
+    
     iconTable.update(function() {
         iconTable.clearChildren();
         
         if (Vars.ui != null && Vars.player != null && Vars.player.unit() != null) {
             var playerUnit = Vars.player.unit();
-            let si = 200;
-            let siy = 96;
-            let left = 0;
-            let top = 150;
+            var displayIcon = (playerUnit instanceof BlockUnitc) ? playerUnit.tile().block.uiIcon : (playerUnit.type != null ? playerUnit.type.uiIcon : null);
+
+            // 1. أيقونة الوحدة (تعديلك الحالي)
+
+
+            // 2. شعار اللعبة الرسمي (Mindustry Logo)
+            // قمت بوضعه في "سطر جديد" أو بجانبه، يمكنك التحكم بموقعه عبر الـ pad
             
-            if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-keven")) {
+            if(Vars.content.getByName(ContentType.block, "cheetah-01-plan").unlocked()){
+            iconTable.image(diamond_logo)
+                .size(300, 100) // الشعار مستطيل لذا نستخدم (العرض، الطول)
+                .padLeft(335)   // عدل هذا الرقم لتحريكه أفقياً
+                .padTop(10);   // عدل هذا الرقم لتحريكه عمودياً
+                }
+                else if (Vars.content.getByName(ContentType.block, "cheetah-01-battery_c").unlocked())
+                {
+                	iconTable.image(gold_logo)
+                .size(300, 100) // الشعار مستطيل لذا نستخدم (العرض، الطول)
+                .padLeft(335)   // عدل هذا الرقم لتحريكه أفقياً
+                .padTop(10);   // عدل هذا الرقم لتحريكه عمودياً
+                }
+                else
+                {
+                	iconTable.image(selver_logo)
+                .size(300, 100) // الشعار مستطيل لذا نستخدم (العرض، الطول)
+                .padLeft(335)   // عدل هذا الرقم لتحريكه أفقياً
+                .padTop(10);   // عدل هذا الرقم لتحريكه عمودياً                	
+                }
                 
-                // استخدام نفس الأمر مباشرة داخل الجدول
-                iconTable.image(Core.atlas.find("cheetah-x-keven_p"))
-                      .size(si)
-                      .padLeft(left)
-                      .padTop(top);
-                      
-                                      iconTable.image(Core.atlas.find("cheetah-x-keven-name"))
-                      .size(si,siy)
-                      .padLeft(left - 200)
-                      .padTop(top + 245);
-            }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-jeff")) {
                 
-                // استخدام نفس الأمر مباشرة داخل الجدول
-                iconTable.image(Core.atlas.find("cheetah-x-jeff_p"))
-                      .size(si)
-                      .padLeft(left)
-                      .padTop(top);
-                      
-                                      iconTable.image(Core.atlas.find("cheetah-x-demon-name"))
-                      .size(si,siy)
-                      .padLeft(left - 200)
-                      .padTop(top + 245);
-            }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-jamaica")) {
-                
-                // استخدام نفس الأمر مباشرة داخل الجدول
-                iconTable.image(Core.atlas.find("cheetah-x-jamaica_p"))
-                      .size(si)
-                      .padLeft(left)
-                      .padTop(top);
-                      
-                                      iconTable.image(Core.atlas.find("cheetah-x-jamaica-name"))
-                      .size(si,siy)
-                      .padLeft(left - 200)
-                      .padTop(top + 245);
-                      
-            }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-lora")) {
-                
-                // استخدام نفس الأمر مباشرة داخل الجدول
-                iconTable.image(Core.atlas.find("cheetah-x-lora_p"))
-                      .size(si)
-                      .padLeft(left)
-                      .padTop(top);
-                                      iconTable.image(Core.atlas.find("cheetah-x-par-name"))
-                      .size(si,siy)
-                      .padLeft(left - 200)
-                      .padTop(top + 245);
-            }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-bradar")) {
-                
-                // استخدام نفس الأمر مباشرة داخل الجدول
-                iconTable.image(Core.atlas.find("cheetah-x-bradar_p"))
-                      .size(si)
-                      .padLeft(left)
-                      .padTop(top);
-                                      iconTable.image(Core.atlas.find("cheetah-x-bradar-name"))
-                      .size(si,siy)
-                      .padLeft(left - 200)
-                      .padTop(top + 245);
-            }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-keven_u")) {
-                
-                // استخدام نفس الأمر مباشرة داخل الجدول
-                iconTable.image(Core.atlas.find("cheetah-x-keven_u_p"))
-                      .size(si)
-                      .padLeft(left)
-                      .padTop(top);
-                                      iconTable.image(Core.atlas.find("cheetah-x-keven_u-name"))
-                      .size(si,siy)
-                      .padLeft(left - 200)
-                      .padTop(top + 245);
+                            if (displayIcon != null) {
+                iconTable.image(displayIcon)
+                    .size(64)
+                    .padLeft(-40)
+                    .padTop(0);
             }
-      
+            
+                            if (displayIcon != null) {
+                iconTable.image(glass_icon)
+                    .size(64)
+                    .padLeft(-64)
+                    .padTop(0);
+            }
+                
+                
         }
     });
 
     Core.scene.add(iconTable);
 });
+
+//========================================================
+// احتلال قطاع
+//========================================================
+
+Events.on(SectorCaptureEvent, event => {
+
+
+
+if(Vars.content.getByName(ContentType.block, "cheetah-01-battery_c").unlocked()){
+
+    if (Vars.content.getByName(ContentType.block, "cheetah-01-arnold").unlocked()){
+	let s = 1;
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-plan3").unlocked()){
+	Vars.content.block("cheetah-01-arnold").unlock();
+	open_element.play(suondN);
+	} else if(Vars.content.getByName(ContentType.unit, "cheetah-01-robot_arm").unlocked()){
+	Vars.content.block("cheetah-01-plan3").unlock();
+	open_element.play(suondN);
+	} else if(Vars.content.getByName(ContentType.unit, "cheetah-01-leena_clothes").unlocked()){
+	Vars.content.unit("cheetah-01-robot_arm").unlock();
+	open_element.play(suondN);
+	} else if(Vars.content.getByName(ContentType.block, "cheetah-01-plan2").unlocked()){
+	Vars.content.unit("cheetah-01-leena_clothes").unlock();
+	open_element.play(suondN);
+	} else if(Vars.content.getByName(ContentType.unit, "cheetah-01-gold").unlocked()){
+	Vars.content.block("cheetah-01-plan2").unlock();
+	open_element.play(suondN);
+	} else if(Vars.content.getByName(ContentType.unit, "cheetah-01-iranian_flag").unlocked()){
+	Vars.content.unit("cheetah-01-gold").unlock();
+	open_element.play(suondN);
+	} else if(Vars.content.getByName(ContentType.block, "cheetah-01-plan").unlocked()){
+	Vars.content.unit("cheetah-01-iranian_flag").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.unit, "cheetah-01-bra").unlocked()){
+	Vars.content.block("cheetah-01-plan").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.unit, "cheetah-01-sword").unlocked()){
+	Vars.content.unit("cheetah-01-bra").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-firefighter_x_builder").unlocked()){
+	Vars.content.unit("cheetah-01-sword").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.unit, "cheetah-01-firefighter").unlocked()){
+	Vars.content.block("cheetah-01-firefighter_x_builder").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-development_2").unlocked()){
+	Vars.content.unit("cheetah-01-firefighter").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-mass_driver_power").unlocked()){
+	Vars.content.block("cheetah-01-development_2").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-jeen_core").unlocked()){
+	Vars.content.block("cheetah-01-mass_driver_power").unlock();
+	open_element.play(suondN);
+	}else{
+	Vars.content.block("cheetah-01-jeen_core").unlock();	
+	open_element.play(suondN);
+	}
+}
+
+
+    if(Vars.content.getByName(ContentType.block, "cheetah-01-leena").unlocked()){
+	Vars.content.block("cheetah-01-battery_c").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-development").unlocked()){
+	Vars.content.block("cheetah-01-leena").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-accelerator").unlocked()){
+	Vars.content.block("cheetah-01-development").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-jeff_core").unlocked()){
+	Vars.content.block("cheetah-01-accelerator").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.unit, "cheetah-01-bulldozer_girl").unlocked()){
+	Vars.content.block("cheetah-01-jeff_core").unlock();	
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-zack").unlocked()){
+	Vars.content.unit("cheetah-01-bulldozer_girl").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-crafting_coins_power").unlocked()){
+	Vars.content.block("cheetah-01-zack").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.unit, "cheetah-01-guardian_of_sky").unlocked()){
+	Vars.content.block("cheetah-01-crafting_coins_power").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-lora_core").unlocked()){
+	Vars.content.unit("cheetah-01-guardian_of_sky").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-create_unit_cores").unlocked()){
+	Vars.content.block("cheetah-01-lora_core").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.unit, "cheetah-01-driver_jon").unlocked()){
+	Vars.content.block("cheetah-01-create_unit_cores").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-carrier").unlocked()){
+	Vars.content.unit("cheetah-01-driver_jon").unlock();
+	open_element.play(suondN);	
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-create_stomach").unlocked()){
+	Vars.content.block("cheetah-01-carrier").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-constructorP").unlocked()){
+	Vars.content.block("cheetah-01-create_stomach").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-reformer_turret").unlocked()){
+	Vars.content.block("cheetah-01-constructorP").unlock();
+	open_element.play(suondN);
+	}else if(Vars.content.getByName(ContentType.block, "cheetah-01-water_plant").unlocked()){
+	Vars.content.block("cheetah-01-reformer_turret").unlock();
+	open_element.play(suondN);
+	}else
+{	
+	Vars.content.block("cheetah-01-water_plant").unlock();
+	open_element.play(suondN);}
+
+});
+
+//====================================
+// تنفيذ بكل اطار
+//=======================================
+// تعريف المتغير خارجاً ليكون عداداً عالمياً
+
+Timer.schedule(() => {
+	
+               
+            if(Vars.state.isGame()){
+            let playerCore = Vars.player.team().core();
+            if(playerCore != null){
+                playerCore.items.add(Vars.content.item("cheetah-01-coin"), 12);
+            }
+           } 
+            
+}, 10, 10);

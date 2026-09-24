@@ -5,7 +5,7 @@
   "size": 1,
   "health": 240,
   "requirements": [
-    {"item": "obsidian", "amount": 2}
+    {"item": "coin", "amount": 2}
   ],
   "category": "distribution",
   "speed": 5,

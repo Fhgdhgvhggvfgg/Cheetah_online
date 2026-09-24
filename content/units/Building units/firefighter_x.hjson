@@ -1,0 +1,239 @@
+type:flying
+flying:true
+"lowAltitude": true,
+name: firefighter x
+description:A cheetah man whose body merges with a super vehicle unleashes powerful water blasts that destroy enemies. and he has a super laser cannon
+"template": "ErekirUnitType",
+health:15000
+speed:3
+armor:4
+"hitSize":64
+"engineSize": 0, 
+rotateSpeed:6
+useEngineElevation:false
+faceTarget:true
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: -66
+moveX: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.17
+growY: -0.17
+
+}
+  ]
+
+
+
+
+abilities:[
+ {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: firefighter_box
+	}
+	
+]
+
+weapons: [
+
+    {
+        name: water_cannon
+        outlineColor: 1ED91E
+        rotate: true
+        mirror: true
+        shootY: 16
+        x: 36
+        y: -26
+        reload: 16
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: water
+        "inaccuracy": 10,
+                        shoot: {
+      shots: 50
+      shotDelay: 0.1
+    }
+            "bullet": {
+      "type": "LiquidBulletType",
+      "liquid": "water",
+          "collidesTeam":true,
+      "healPercent":1,
+      pierce: true
+      "damage": 32,
+      "collidesTeam":true,
+      "orbSize": 1.5
+      "speed": 13,
+      "lifetime": 30,
+      "status": "wet",
+      "statusDuration": 60
+    }
+
+
+parts: [
+      {
+        layerOffset: 0.0001
+        type: RegionPart
+        suffix: "-partA"
+        mirror: false
+        under: false
+        outline: false
+        x: 0
+        y: 0
+        moveY: -15
+        moveX: 0
+        moveRot: 180
+        progress: warmup
+        color: ffffffff
+        colorTo: ffffffff
+        scl: 0.1
+        growX: 0
+        growY: 0
+      }
+      {
+        layerOffset: 0.0001
+        type: RegionPart
+        suffix: "-partA"
+        mirror: true
+        under: false
+        outline: false
+        x: 0
+        y: 0
+        moveY: 7
+        moveX: 10
+        moveRot: 180
+        progress: warmup
+        color: ffffffff
+        colorTo: ffffffff
+        scl: 0.1
+        growX: 0
+        growY: 0
+      }
+    ]
+    
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+      {
+        name: lazerX_cannon
+        outlineColor: 1ED91E
+        rotate: true
+        mirror: false
+        shootY: 16
+        x: 0
+        y: 0
+        reload: 140
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: large_laser
+        "inaccuracy": 10,
+bullet: {
+      type: LaserBulletType
+        length: 300
+        width: 6
+        damage: 200
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          8DEEEB
+          8DEEEB
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 30
+        sideWidth: 3.4
+    }
+
+
+parts: [
+      {
+        layerOffset: 0.0001
+        type: RegionPart
+        suffix: "-partA"
+        mirror: true
+        under: false
+        outline: false
+        x: 5
+        y: -10
+        moveY: -3
+        moveX: 1
+        moveRot: 0
+        progress: warmup
+        color: ffffffff
+        colorTo: ffffffff
+        scl: 0.1
+        growX: 0
+        growY: 0
+      }
+      
+      {
+        layerOffset: 0.0001
+        type: RegionPart
+        suffix: "-partA"
+        mirror: true
+        under: false
+        outline: false
+        x: 5
+        y: -5
+        moveY: 0
+        moveX: 2
+        moveRot: 0
+        progress: warmup
+        color: ffffffff
+        colorTo: ffffffff
+        scl: 0.1
+        growX: 0
+        growY: 0
+      }
+
+
+      {
+        layerOffset: 0.0001
+        type: RegionPart
+        suffix: "-partA"
+        mirror: true
+        under: false
+        outline: false
+        x: 5
+        y: 5
+        moveY: 3
+        moveX: 1
+        moveRot: 0
+        progress: warmup
+        color: ffffffff
+        colorTo: ffffffff
+        scl: 0.1
+        growX: 0
+        growY: 0
+      }
+
+    ]
+    
+
+    }
+    
+    
+    
+ ]
+     alwaysUnlocked: true

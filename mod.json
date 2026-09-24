@@ -1,7 +1,7 @@
 {
-  name: "cheetah-x"
-  displayName: "cheetah-x"
-  description: "The mod will be ready soon. You just have to wait a little longer."
+  name: "cheetah 01"
+  displayName: "cheetah online"
+  description: "warriors cheetahs. Each core you destroy unlocks a new block or unit to play with. Core destruction breaks."
   author: "keven"
   version: "1.0"
   minGameVersion: 145

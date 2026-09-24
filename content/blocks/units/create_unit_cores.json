@@ -1,0 +1,53 @@
+{
+"name": "create unit",
+"category":"units",
+
+  consumes: {
+    power: 1
+    }
+    
+    
+"plans":[
+
+{
+"unit":"jeen",
+"requirements":[
+"coin/580"
+],
+"time":3000
+}
+
+{
+"unit":"jeff",
+"requirements":[
+"coin/400"
+],
+"time":2700
+}
+
+{
+"unit":"lora",
+"requirements":[
+"coin/540"
+],
+"time":2500
+}
+
+{
+"unit":"keven",
+"requirements":[
+"coin/500"
+],
+"time":2680
+}
+
+],
+
+
+"requirements":["coin/3400"],
+"research":"ceate-wizard",
+"size":3,
+"type":"UnitFactory",
+"unitCapModifier":5,
+    alwaysUnlocked: true
+}

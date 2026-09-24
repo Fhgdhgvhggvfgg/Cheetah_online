@@ -1,0 +1,91 @@
+  "type": "ItemTurret",
+  "name": "arnold",
+  "description": "Cheetah man fires projectiles loaded with flying laser cannons.
+",
+  "health": 6350,
+  "reload": 600,
+  "targetHealing":true,
+  "coolantMultiplier":2,
+  "range": 320,
+  rotateSpeed: 4
+  "size": 6,
+  "heatColor":"ffff99ff",
+  "shootCone":10,
+  maxAmmo: 6
+  "recoil":0.60,
+  ambientSound: preparing_rifle
+  
+  drawer: {
+  type: DrawTurret
+    "parts": [
+{
+type: RegionPart
+suffix: -preview
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: -48
+moveX: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.23
+growY: -0.23
+}
+  ]
+  }
+  "consumes":{ 
+  "liquids":[
+  {
+      "liquid": "water",
+      "amount": 0.1,
+      "optional":true,
+      "booster":true,
+  }]
+},
+  "researchCostMultiplier": 1,
+  "inaccuracy":0,
+  "targetAir": true,
+  "targetGround": true,
+  "shootY":20,
+      "shoot": {
+          "type": "ShootAlternate",
+          "spread":6,
+          "shots": 3,
+          "shotDelay":40
+      },
+ammoTypes: {
+    
+        coin: {
+        damage: 50
+        ammoMultiplier: 1
+        speed: 8
+        height: 22
+        width: 22
+        lifetime: 52
+        fragOnHit: true
+        scaleLife: true
+		      fragBullets: 1
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+      type: BasicBulletType
+        spawnUnit: air_force
+       }
+    }
+    
+
+}
+requirements: [
+coin/1600
+]
+category: turret
+
+    alwaysUnlocked: true

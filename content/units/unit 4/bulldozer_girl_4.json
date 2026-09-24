@@ -1,0 +1,182 @@
+name: bulldozer girl level 4
+"template": "ErekirUnitType",
+description: A Cheetah girl pilots a massive bulldozer with a sophisticated laboratory, launching huge excavator payloads at enemies.
+type: mech 
+ "range": 50,
+  "maxRange": 50,
+mechLegColor: 00000000
+health: 9000
+armor: 1
+hitSize: 47
+speed: 3
+rotateSpeed: 3.6
+accel: 0.15
+stepShake: 0
+mechFrontSway: 0
+mechSideSway: 0
+itemCapacity: 12
+hitShake: 0
+outlineColor: 00000000
+buildRange:120,
+buildSpeed:1.4,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -50
+moveX: -50
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.2
+growY: -0.2
+
+}
+  ]
+
+
+abilities:[
+
+]
+
+weapons: [
+
+    {
+    "layerOffset": -0.0001, 
+        name: stent
+        rotate: false
+        mirror: false
+        shootY: 3
+        x: 0
+        y: 32
+        reload: 30
+        recoil: -5
+        ejectEffect: casing2
+        shootSound: shovelS
+            shoot: {
+firstShotDelay: 0
+}
+        
+    bullet: {
+      type: LaserBulletType
+        length: 31
+        width: 1
+        damage: 96
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+        		splashDamageRadius: 68
+		splashDamage: 980
+		hitEffect: blastExplosion
+        trailLength: 4
+        trailColor: ff0000
+    }
+    }
+
+
+    {
+    "layerOffset": 0.0001, 
+        name: Super_lab
+        rotate: true
+        mirror: false
+        shootY: 11
+        x: 0
+        y: -25
+        reload: 300
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: iron_door
+        
+          "parts": [
+{
+  "layerOffset": 0.0001, 
+type: RegionPart
+suffix: -door
+mirror: true
+under: false
+outline: false
+x: 0
+y: 14
+moveY: 0
+moveX: -10
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+}
+
+{
+type: RegionPart
+suffix: -arm
+mirror: true
+under: false
+outline: false
+x: 4
+y: 13.5
+moveY: 0
+moveX: 4
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+}
+
+  ]
+        
+            shoot: {
+firstShotDelay: 0
+}
+        
+            bullet: {
+              type: SolidBulletType
+                damage: 100
+                homing: false
+                scaleLife: true
+                speed: 7
+                sprite: large-bomb
+                lifetime: 30
+                knockback: -1
+                backColor: 8DEEEB
+                frontColor: 8DEEEB
+                mixColorFrom: 8DEEEB
+                mixColorTo: 8DEEEB
+                width: 50
+                height: 90
+         fragBullets: 1
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+      type: BasicBulletType
+        spawnUnit: Demolition_excavator
+       }
+       }
+    }
+ ]
+
+    alwaysUnlocked: true

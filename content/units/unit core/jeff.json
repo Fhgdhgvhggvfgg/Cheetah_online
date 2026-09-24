@@ -5,6 +5,9 @@ buildRange:300,
 buildSpeed:8.5,
 accel: 0.06
 drag: 0.06
+ "range": 250,
+  "maxRange": 300,
+description:A cheetah demon man hurls powerful blue fireballs
 outlineColor: 00000000
 "template": "ErekirUnitType",
 hitSize: 28
@@ -13,7 +16,7 @@ contorller:BuilderAI,
 coreUnitDock:true,
 defaultController: BuilderAI,
 flying:true,
-health:2000,
+health:3900,
   "engineSize": 0, 
 itemCapacity: 130,
 localisedName: "jeff",
@@ -27,18 +30,7 @@ speed: 8,
 "payloadCapacity": 1500,
 
 
-
-abilities:[
-
-]
-
-weapons: [
-   {
-   name: demon
-       shootWarmupSpeed: 10
-   
-     "parts": [
-  
+  "parts": [
 {
 type: RegionPart
 suffix: 
@@ -47,8 +39,8 @@ under: false
 outline: false
 x: 0
 y: 0
-moveY: -35
-moveX: 0
+moveY: -32
+moveX: -32
 progress: warmup
 
 
@@ -62,7 +54,7 @@ mirror: false
 under: false
 outline: false
 x: 0
-y: -25
+y: -21
 moveRot: 0
 progress: warmup
 color: ffffff4d
@@ -70,26 +62,33 @@ colorTo: ffffffb3
 }
 
 {
-
 type: RegionPart
-suffix: -photo
+suffix: -full
 mirror: false
 under: false
 outline: false
 x: 0
 y: 0
-moveRot: 0
+moveRot: -360
 progress: warmup
 color: ffffff00
 colorTo: ffffffb3
-growX: -0.75
-growY: -0.75
+growX: -0.2
+growY: -0.2
 }
 
 ]
 }
   ]
-  
+
+
+abilities:[
+
+]
+
+weapons: [
+   {
+   name: demon
     x: 0
     y: 0
     reload: 54
@@ -104,11 +103,11 @@ growY: -0.75
 bullet: {
       type: BasicBulletType
       status: burning
-statusDuration: 200
+statusDuration: 540
         sprite: circle-bullet
         lightRadius: 10
         lightColor: FFFFFFF
-        damage: 80
+        damage: 130
         scaleVelocity: true
         splashDamage: 40
         splashDamageRadius: 40
@@ -172,46 +171,107 @@ statusDuration: 200
 }
 
 
-    {
-    name: skeletonS
-    
-                   shoot: {
+   {
+   name: load_spirit_energy
+               shoot: {
                      shots: 1
-      shotDelay: 12
+      shotDelay: 0
+firstShotDelay: 0
 }
-        rotate: true
-        mirror: true
-        x: 24
-        y: 8
-        reload: 500
-        recoil: 1
-        ejectEffect: casing2
-        shootSound: skeleton_r
-        
-                        bullet: {
+    x: 0
+    y: -40
+    reload: 1900
+    shootWarmupSpeed: 0.006
+    minWarmup: 0.99
+    recoil: 0
+     "heatTime": 90,
+    "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 0
+    mirror: false
+    rotate: false
+    shootSound: iron_door
+    
+    bullet: {    
+     type: SolidBulletType
+                damage: 1
+                homing: false
+                speed: 1
+                scaleLife: true          
+                lifetime: 1                
+         fragBullets: 1
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
       type: BasicBulletType
-        sprite: circle-bullet
-        lightRadius: 10
-        lightColor: FF0000
-        damage: 10
-        scaleVelocity: true
-        splashDamage: 40
-        splashDamageRadius: 60
-        height: 6
-        width: 6
-        speed: 5
-        lifetime: 4
-                  "fragBullets": 1
-                  
-  "range": 230,
-  "maxRange": 230,
-                  
-                fragBullet: {
-      type: BasicBulletType
-        spawnUnit: skeleton
+        spawnUnit: spirit_energy
        }
        }
-    }
+       
+         "parts": [
+{
+type: RegionPart
+suffix: -load
+mirror: false
+    "layerOffset": -0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: recoil
+moveRot: -180
+       
+       }
+       
+       {
+type: RegionPart
+suffix: -energy1
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -7000
+color: ffffffff
+       
+       }
+       
+              {
+type: RegionPart
+suffix: -energy3
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -4000
+color: ffffffff
+       
+       }
+       
+                     {
+type: RegionPart
+suffix: -energy2
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -6000
+color: ffffffff
+       
+       }
+       
+   ]
+   }
 
 
    ]

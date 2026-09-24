@@ -1,0 +1,23 @@
+Name: energy plant
+description: Element-powered coin element.
+type: ConsumeGenerator
+size: 1
+health: 1400
+hasItems: true
+hasLiquids: true
+hasPower: true
+liquidCapacity: 25
+itemDuration: 1400
+powerProduction: 2.4
+itemCapacity:15
+consumes: {
+     items: [
+     {"item":"coin","amount":1},
+      ]
+}
+requirements: [
+coin/44
+]
+category: power
+
+      alwaysUnlocked: true

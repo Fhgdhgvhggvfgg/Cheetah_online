@@ -5,8 +5,7 @@ moveForce: 300
 payloadLimit: 20
 category: units
 requirements: [
-gold/10
-obsidian/24
+coin/24
 ]
 
 alwaysUnlocked: true

@@ -1,0 +1,21 @@
+{
+"category":"crafting"
+"craftEffect":"smeltsmoke",
+"craftTime":100, 
+"description":"power coin lab.
+",
+"displayNane":"crafting coins power",
+"consumes":{
+"power": 1
+"items":[]
+}
+"health":900,
+"itemCapacity":20,
+"name": "crafting coins",
+"outputItem":{"item":"coin","amount":1},
+"requirements":[{"item":"coin","amount":250}, {"item":"emerald","amount":4}],
+"size":3
+"type": "GenericCrafter",
+
+  "alwaysUnlocked": true,
+}

@@ -1,0 +1,14 @@
+category: distribution
+consumes: {"power":2},
+"description":"A block that launches elements great distances and requires some energy.
+",  
+health: 430
+itemCapacity: 30
+localisedName: masd driver power
+range: 670
+requirements:[coin/380]
+"outlineColor": "00000000",
+size: 2
+type: MassDriver
+
+    alwaysUnlocked: true

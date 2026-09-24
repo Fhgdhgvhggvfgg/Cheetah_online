@@ -16,7 +16,7 @@ contorller:BuilderAI,
 coreUnitDock:true,
 defaultController: BuilderAI,
 flying:true,
-health:1300,
+health:2300,
   "engineSize": 0, 
 itemCapacity: 150,
 localisedName: "lora",
@@ -31,13 +31,56 @@ speed: 10,
 
 
   "parts": [
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -34
+moveX: -34
+progress: warmup
 
-  
+
+children: [
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -21
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.2
+growY: -0.2
+}
+
+]
+}
 
 
 {
 "layerOffset": -0.0001, 
-shootWarmupSpeed: 1
 type: RegionPart
 suffix: -lowest
 mirror: false
@@ -55,7 +98,6 @@ growY: 0.14
 
 {
 "layerOffset": 0.0001, 
-shootWarmupSpeed: 1
 type: RegionPart
 suffix: -top
 mirror: false
@@ -123,80 +165,108 @@ weapons: [
 }
 }
 
-{
-shootWarmupSpeed: 10
 
-  "parts": [
-{
-type: RegionPart
-suffix: 
-mirror: false
-under: false
-outline: false
-x: 0
-y: 0
-moveY: -34
-moveX: 0
-progress: warmup
-
-
-children: [
-{
-type: RegionPart
-suffix: -name
-mirror: false
-under: false
-outline: false
-x: 0
-y: -21
-moveRot: 0
-progress: warmup
-color: ffffff4d
-colorTo: ffffffb3
+   {
+   name: load_spirit_energy
+               shoot: {
+                     shots: 1
+      shotDelay: 0
+firstShotDelay: 0
 }
-
-{
-type: RegionPart
-suffix: -photo
-mirror: false
-under: false
-outline: false
-x: 0
-y: 0
-moveRot: 0
-progress: warmup
-color: ffffff00
-colorTo: ffffffb3
-growX: -0.8
-growY: -0.8
-}
-
-]
-
-}
-]
-
-    name: par
-    shooty: 99999999999999999
-    reload: 9999999999999999
-    alternate: false
+    x: 0
+    y: -40
+    reload: 1900
+    shootWarmupSpeed: 0.006
+    minWarmup: 0.99
     recoil: 0
+     "heatTime": 90,
+    "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 0
     mirror: false
     rotate: false
-    x: 0
-    y: 0
-    shootSound: gggghgggghghj
-    bullet: {
+    shootSound: iron_door
+    
+bullet: {    
+     type: SolidBulletType
+                damage: 1
+                homing: false
+                speed: 1
+                scaleLife: true          
+                lifetime: 1                
+         fragBullets: 1
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
       type: BasicBulletType
-      speed: 5
-      trailColor: FF69B4
-      frontColor: FF69B4
-      backColor: FF69B4
-      lifetime: 1
-      }
-}
-
-
+        spawnUnit: spirit_energy
+       }
+       }
+       
+         "parts": [
+{
+type: RegionPart
+suffix: -load
+mirror: false
+    "layerOffset": -0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: recoil
+moveRot: -180
+       
+       }
+       
+       {
+type: RegionPart
+suffix: -energy1
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -7000
+color: ffffffff
+       
+       }
+       
+              {
+type: RegionPart
+suffix: -energy3
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -4000
+color: ffffffff
+       
+       }
+       
+                     {
+type: RegionPart
+suffix: -energy2
+mirror: false
+    "layerOffset": 0.0001, 
+under: false
+outline: false
+x: 0
+y: 0
+progress: warmup
+moveRot: -6000
+color: ffffffff
+       
+       }
+       
+   ]
+   }
 
    ]
    

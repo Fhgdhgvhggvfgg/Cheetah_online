@@ -1,0 +1,33 @@
+{
+alwaysUnlocked: true
+"template": "ErekirUnitType",
+canAttack:false,
+lifetime: 999999999999999999,
+coreUnitDock:true,
+  "drownTimeMultiplier": 99999999999999999999,
+flying:false,
+"outlineColor": "00000000",
+description:"She is injured and you need to put her in the development lab to heal her.",
+health:6000,
+hitSize: 32
+localisedName: "iranian flag",
+speed: 0,
+rotateSpeed: 0
+"type":"missile",
+"engineSize": 0, 
+
+
+abilities: [
+
+{
+	"type": "mindustry.entities.abilities.ForceFieldAbility",
+	"radius": 50,
+	"regen": 4,
+	"max": 3600,
+	"cooldown": 380
+	"sides": 12
+ }
+ 
+ ]
+ 
+ }

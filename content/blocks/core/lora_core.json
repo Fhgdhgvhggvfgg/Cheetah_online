@@ -1,23 +1,19 @@
 name: lora core
   type: CoreBlock
-  health: 24000
-  size: 6
+  health: 36000
+  size: 10
   armor: 10
   isFirstTier: false
-  itemCapacity: 10000
-  unitCapModifier: 40
+  itemCapacity: 60000
+  unitCapModifier: 60
   buildCostMultiplier: 0.7
   squareSprite: false
     "thrusterLength": 30
   unitType: lora
   "requirements": [
-        {
-      "item": "gold",
-      "amount": 180
-    },
-            {
-      "item": "elixir",
-      "amount": 160
+    {
+      "item": "coin",
+      "amount": 0
     },
     
   ],

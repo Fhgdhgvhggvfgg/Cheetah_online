@@ -1,0 +1,16 @@
+type: UnitAssemblerModule
+size: 2
+health: 1750
+  "description": "A schematic device that enhances the schematic in the super modular developer. Place it in front of the development area.
+",
+  "name": "Diagram device 3",
+alwaysUnlocked: true
+category: units
+requirements: [
+coin/150
+emerald/30
+]
+consumes: {
+  power: 3
+}
+tier: 3

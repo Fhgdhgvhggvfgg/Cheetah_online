@@ -1,0 +1,18 @@
+{
+alwaysUnlocked: true
+"template": "ErekirUnitType",
+canAttack:false,
+description: Take it to the development immediately for processing.
+outlineColor: ffffff00
+lifetime: 999999999999999999,
+coreUnitDock:true,
+  "drownTimeMultiplier": 99999999999999999999,
+flying:false,
+health:60000,
+hitSize: 32
+name: "jeen fire injured",
+speed: 0,
+rotateSpeed: 0
+"type":"missile",
+"engineSize": 0, 
+}

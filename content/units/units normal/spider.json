@@ -1,0 +1,72 @@
+{
+  "singleTarget": true,
+  "template": "ErekirUnitType",
+  "localizedName": "spider",
+  "drawShields": false,
+  "lightRadius": 200,
+  "type": "legs",
+  "drownTimeMultiplier": 99999999999999999999,
+  "legCount": 8,
+  "legLength": 22,
+  "legSpeed": 0.5,
+  "legExtension": -3,
+  "legForwardScl": 2,
+  "legMoveSpace": 1,
+  "legPairOffset": 2,
+  "rotateSpeed": 5,
+  "speed": 1,
+  "accel": 0.4,
+  "drag": 0.4,
+  "range": 40,
+  "maxRange": 40,
+  "aimDst": 340,
+  "outlineColor": "00000000",
+  "faceTarget": true,
+  "flying": false,
+  "health": 700,
+  "hitSize": 18,
+  "lowAltitude": true,
+  
+  
+  
+  "weapons": [
+
+{
+                name: focus-rail
+                mirror: false
+                alternate: true
+                continuous: true
+                top: true
+                rotate: true
+		rotateSpeed: 0
+                x: 0
+                y: 9
+                reload: 80
+                shoot: {
+                    shots: 1
+                    shotDelay: 0
+            }
+            inaccuracy: 0
+            recoil: 0
+            shootSound: beam
+            shootEffect: none
+            bullet: {
+                type: ContinuousLaserBulletType
+                damage: 13
+                speed: 0
+                lifetime: 50
+                knockback: 0
+                backColor: 00ffff
+                frontColor: 00ffff
+                mixColorFrom: 00ffff
+                mixColorTo: 00ffff
+                width: 5
+                length: 40
+                shake: 0 
+            }
+ }
+
+  ]
+  
+      alwaysUnlocked: true
+}

@@ -3,7 +3,7 @@
   "type": "Unloader",
   "requirements": [
     {
-      "item": "ram",
+      "item": "coin",
       "amount": 2
     },
 

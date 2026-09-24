@@ -1,0 +1,31 @@
+{
+"category":"crafting"
+"craftEffect":"smeltsmoke",
+"craftTime":180, 
+"description":"silicone manufacturing plant",
+"displayNane":"create silicon",
+"consumes":{
+"power":1,
+"items":["coin/1"],
+"liquid": {
+      "liquid": "water",
+      "amount": 0.08
+    },
+},
+"health":1200,
+"itemCapacity":80,
+"name": "creat silicon",
+"outputItem":{    
+
+"item":"silicon","amount":3
+"liquid": {
+      "liquid": "water",
+      "amount": 0.08
+    },
+},
+"requirements":[{"item":"coin","amount":25}],
+"size":2
+"type": "GenericCrafter",
+
+    alwaysUnlocked: true
+}

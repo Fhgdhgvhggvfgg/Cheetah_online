@@ -1,0 +1,11 @@
+{
+  "name": "wall 01",
+  "description": "A strong wall stands in the way of any defense",
+  "type": "Wall",
+  "health": 4600,
+  "size": 1,
+  "requirements": [{"item": "coin","amount": 20}],
+  "category": "defense",
+  
+    alwaysUnlocked: true
+}

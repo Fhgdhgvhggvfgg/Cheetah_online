@@ -1,0 +1,106 @@
+{
+"description": "Cheetah Man, a professional war car driver. He has a machine gun",
+"name":"driver jon 2",
+"type": "tank",
+"hitSize": 50,
+accel: 0.05
+drag: 0.08
+"crushDamage": 2,
+"template": "ErekirUnitType",
+"treadPullOffset": 6,
+"singleTarget": false,
+"omniMovement": false,
+"faceTarget": false,
+"health": 2700,
+"armor": 20,
+"speed": 7,
+"rotateSpeed": 6,
+"itemCapacity": 0,
+"outlineColor": "44413c",
+"treadRects": [
+    {
+      "x": 29,
+      "y": -84,
+      "width": 19,
+      "height": 170
+    }
+  ],
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: -full
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: -41
+moveX: -41
+moveRot: -360
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.13
+growY: -0.13
+
+}
+  ]
+
+
+
+abilities:[
+
+]
+
+
+"weapons": [
+    {
+                name: bekasi_2
+                mirror: false
+                top: true
+                rotate: true
+		rotateSpeed: 5
+		shootY: 16
+                x: 0
+                y: -15
+                reload: 3
+                recoil: 0
+                                
+    bullet: {
+      type: BasicBulletType
+      speed: 16
+      trailColor: ffffff
+      frontColor: ffffff
+      backColor: ffffff
+      lifetime: 20
+      damage: 25
+      width: 10
+      height: 15
+      trailWidth: 1
+      trailLength: 4
+      pierce: true
+      shrinkX: 0
+      shrinkY: 0
+      fragBullets: 10
+      fragSpread: 60
+      fragRandomSpread: 0
+      fragVelocityMin: 1
+      fragVelocityMax: 1
+      fragLifeMin: 1
+      fragLifeMax: 1
+}
+                
+}
+ 
+
+   
+
+
+  ]
+  
+      alwaysUnlocked: true
+}

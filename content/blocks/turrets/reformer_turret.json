@@ -1,0 +1,149 @@
+name: reformer turret
+description: "A tower that repairs nearby blocks and only requires energy.
+"
+type: PowerTurret
+"outlineColor": "00000000"
+rotateSpeed: 8
+reload: 56
+targetGround: false
+targetAir: false
+range: 70
+recoil: 0
+shootSound: bolt
+size: 1
+health: 160
+targetHealing: true
+
+drawer: {
+  type: DrawTurret
+    "parts": [
+    
+    {
+type: RegionPart
+suffix: -energiheal
+mirror: false
+under: false
+outline: false
+"layerOffset": -0.1, 
+x: 0
+y: 0
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffff
+scl: 0.1
+growX: 0.4
+growY: 0.4
+}
+{
+type: RegionPart
+suffix: -
+mirror: false
+under: false
+outline: false
+"layerOffset": -0.1, 
+x: 0
+y: 0
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffffff
+scl: 0.1
+growX: 0.2
+growY: 0
+
+children: [
+{
+type: RegionPart
+suffix: -mechan
+mirror: false
+under: false
+outline: false
+"layerOffset": -0.01, 
+x: 0
+y: 0
+moveRot: 0
+moveY: 3
+progress: recoil
+growX: 0
+growY: 0
+
+}
+]
+}
+
+  ]
+  }
+  
+ 
+xRand: 1
+shootY: 8
+            shoot: {
+firstShotDelay: 10
+}
+consumes: {
+power: 2
+coolant: {
+  type: ConsumeCoolant
+  allowGas: false
+  allowLiquid: true
+  amount: 0.2
+}
+}
+
+
+shootType: {
+  type: BasicBulletType
+  damage: 0
+  speed: 2.5
+  height: 5
+  width: 1.2
+  lifetime: 14
+  
+  collidesTeam: true
+  healPercent: 3
+  
+  collidesAir: false
+  collidesGround: false
+  collides: true
+  collidesTeam: true
+  fragOnHit: true
+                  fragBullets: 40
+        fragVelocityMin: 0.2
+        fragRandomSpread: 350
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+      "type": "LiquidBulletType",
+      "liquid": "water",
+          "collidesTeam":true,
+      "damage": 0,
+      "collidesTeam":true,
+      "orbSize": 1.5
+      "speed": 1.5,
+      "lifetime": 20,
+      "status": "wet",
+      "statusDuration": 60
+       }
+  splashDamageRadius: 35
+  splashDamage: 0
+  hitEffect: blastExplosion
+  collidesAir: false
+  collidesGround: false
+  collides: true
+  healPercent: 3
+  collidesTeam: true
+  trailLength: 4
+  trailColor: "00ffff"
+}
+alwaysUnlocked: true
+requirements: [
+  coin/50
+]
+
+category: turret
+
+

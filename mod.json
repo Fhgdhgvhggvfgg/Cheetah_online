@@ -1,7 +1,7 @@
 {
   name: "cheetah 01"
   displayName: "cheetah online"
-  description: "warriors cheetahs. Each core you destroy unlocks a new block or unit to play with. Core destruction breaks."
+  description: "This version of the mod (cheetah 01) allows you to play online with your friends and has all items fully unlocked."
   author: "keven"
   version: "1.0"
   minGameVersion: 145

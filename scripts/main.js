@@ -1,3 +1,25 @@
+function menuWelcome() {
+    const d = new BaseDialog("hello");
+    
+    d.cont.pane(p => {
+        p.add("The mod will be ready soon. You just have to wait a little longer.").row();
+        
+        let studyTex3 = Core.atlas.find("cheetah-01-keven_u_p");
+        if (!studyTex3.found()) studyTex3 = Core.atlas.find("keven_u_p");
+        if (!studyTex3.found()) studyTex3 = Core.atlas.find("error");
+        p.image(studyTex3).size(600, 600).pad(10).row();
+        
+        p.button("keven 01", Icon.link, () => 
+            Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/warehouse/"))
+            .size(160, 80).padTop(-1000).padLeft(-400).row();
+        
+        p.add("come to our page for the latest news").row();
+    }).size(1000, 600);   // ← إغلاق pane هنا فقط
+    
+    d.buttons.button("gooo to game", () => d.hide()).size(300, 100);
+    d.show();
+}
+
 
 // ==========================================================
 // 1. إعدادات الزووم (Zoom Logic)
@@ -62,6 +84,7 @@ let screenW = 10;
 
 Events.on(ClientLoadEvent, () => {
     table = newTable();
+    menuWelcome();
     
 Time.run(60, () => {
 
@@ -94,12 +117,11 @@ Time.run(60, () => {
     if(!jeff_iran.found()) jeff_iran = Core.atlas.find("jeff_iran");    
 
 
-
-
         Vars.ui.menuGroup.fill(Cons(t => {           
 t.clear(); // تنظيف الطبقات القديمة 
             t.left().bottom(); // نقطة الصفر أسفل يسار
             
+
             // --- المتغيرات الخاصة بك ---
             let widthjeX = screenW * 11; 
             let heightjeY = screenW * 13;             
@@ -117,7 +139,17 @@ t.clear(); // تنظيف الطبقات القديمة
                                    
         }));
 
+        Vars.ui.menuGroup.fill(Cons(t => {           
+t.clear(); // تنظيف الطبقات القديمة 
+            t.left().bottom(); // نقطة الصفر أسفل يسار
+            
+            let bPho4 = new Button(Styles.none);
+bPho4.button(new TextureRegionDrawable(Icon.info), () => { menuWelcome(); });
+bPho4.add("setting").padLeft(6); 
+t.add(bPho4).size(160, 50).padTop(-120).padLeft(50);
 
+                                   
+        }));
 
 
 
